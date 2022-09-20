@@ -1,4 +1,4 @@
-# Promostandards PPC Caching Proxy
+# PromoStandards PPC Caching Proxy
 
 ps-caching-proxy is a maintenance-free supplier-hosted PromoStandards Product Pricing and Configuration (PPC) caching proxy.
 

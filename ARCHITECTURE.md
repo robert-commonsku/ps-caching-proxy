@@ -31,7 +31,7 @@
 
 ## Statistics
 - Usage
- - Who, when 
+  - Who, when 
 - Updates
 - Recency of Data
 - Geocode IP with heat map
@@ -59,24 +59,24 @@
  
 ## Settings
 
-HostName
-: The domain where the Proxy is hosted
-Supplier PPC endpoint
-: The URL for the Supplier PPC endpoint
-Supplier PPC version
-: The version of PPC that the supplier PPC endpoint supports
-Supplier Product Data endpoint
-: The URL for the Supplier Product Data endpoint
-Supplier Product Data version
-: The version of Product Data that the supplier Product Data endpoint supports
-Locales
-: A set of supported locales (i.e. localizationLanguage-localizationCountry pairs), e.g. en-US
-Default Locale
-: A localizationLanguage-localizationCountry pair e.g. en-US.  It must exist in the Locales setting.
-Supplier Company Name
-: The name of the Supplier
-Default TTL
-: A hint for how frequently the cache should be updated
+**HostName**
+  - The domain where the Proxy is hosted
+**Supplier PPC endpoint**
+  - The URL for the Supplier PPC endpoint
+**Supplier PPC version**
+  - The version of PPC that the supplier PPC endpoint supports
+**Supplier Product Data endpoint**
+  - The URL for the Supplier Product Data endpoint
+**Supplier Product Data version**
+  - The version of Product Data that the supplier Product Data endpoint supports
+**Locales**
+  - A set of supported locales (i.e. localizationLanguage-localizationCountry pairs), e.g. en-US
+**Default Locale**
+  - A localizationLanguage-localizationCountry pair e.g. en-US.  It must exist in the Locales setting.
+**Supplier Company Name**
+  - The name of the Supplier
+**Default TTL**
+  - A hint for how frequently the cache should be updated
 
 ## Methods with Universal Responses
 
@@ -89,20 +89,20 @@ Default TTL
 
 ## Cache Keys
 
-getAvailableCharges
-: locale, productId
-getAvailableLocations
-: locale, productId
-getDecorationColors
-: locale, productId, locationId
-getFobPoints
-: locale, productId
-getConfigurationAndPricing
-: locale, productId, fobId, currency, priceType, configurationType
-PartPriceArray
-: *Request cache key*, User id, partId,
-ChargePriceArray
-: *Request cache key*, User id, chargeId
+**getAvailableCharges**
+  - locale, productId
+**getAvailableLocations**
+  - locale, productId
+**getDecorationColors**
+  - locale, productId, locationId
+**getFobPoints**
+  - locale, productId
+**getConfigurationAndPricing**
+  - locale, productId, fobId, currency, priceType, configurationType
+**PartPriceArray**
+  - *Request cache key*, User id, partId,
+**ChargePriceArray**
+  - *Request cache key*, User id, chargeId
 
 
 ## Algorithms
@@ -229,25 +229,25 @@ They pull from the work queue.
 
 ## Glossary
 
-PPC
-: The PromoStandards Product Configuration, Decoration, and Pricing service (currently at version 1.0.0)
-ProductData
-: The PromoStandards Product Data service (currently at version 2.0.0)
-Supplier
-: Agent who provides PromoStandards services
-User
-: Agent who consumes PromoStandards services
-Proxy
-: This project which provides a supplier hosted proxy for Supplier PPC
-endpoint
-: The URL where a service is hosted, usually qualified by host and service.  e.g. Proxy PPC endpoint, Supplier ProductData endpoint
-Credentials
-: The username and password sent in each User request to authorize the User.  They are provided in the `id` and `password` fields of each request, or as HTTP Basic Auth for REST requests
-Transform
-: Changes the Proxy makes to Supplier responses
-Refine
-: Changes the Proxy makes to Supplier response to filter out data that is not required because of request parameters
-Universal Response
-: A response that does not depend on the User
-Response Template
-: A template that can create a response by injecting values into slots
+**PPC**
+  - The PromoStandards Product Configuration, Decoration, and Pricing service (currently at version 1.0.0)
+**ProductData**
+  - The PromoStandards Product Data service (currently at version 2.0.0)
+**Supplier**
+  - Agent who provides PromoStandards services
+**User**
+  - Agent who consumes PromoStandards services
+**Proxy**
+  - This project which provides a supplier hosted proxy for Supplier PPC
+**endpoint**
+  - The URL where a service is hosted, usually qualified by host and service.  e.g. Proxy PPC endpoint, Supplier ProductData endpoint
+**Credentials**
+  - The username and password sent in each User request to authorize the User.  They are provided in the `id` and `password` fields of each request, or as HTTP Basic Auth for REST requests
+**Transform**
+  - Changes the Proxy makes to Supplier responses
+**Refine**
+  - Changes the Proxy makes to Supplier response to filter out data that is not required because of request parameters
+**Universal Response**
+  - A response that does not depend on the User
+**Response Template**
+  - A template that can create a response by injecting values into slots
