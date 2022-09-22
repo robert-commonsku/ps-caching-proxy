@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:shared="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" xmlns:tns="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" targetNamespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/" elementFormDefault="qualified">
+    <xsd:import namespace="http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/" schemaLocation="SharedObjectsPricingAndConfiguration.xsd"/>
+    <xsd:element name="GetAvailableChargesRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:wsVersion"/>
+                <xsd:element ref="shared:id"/>
+                <xsd:element ref="shared:password" minOccurs="0"/>
+                <xsd:element ref="shared:productId" minOccurs="0"/>
+                <xsd:element ref="shared:localizationCountry"/>
+                <xsd:element ref="shared:localizationLanguage"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="AvailableCharge">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:chargeId"/>
+                <xsd:element ref="shared:chargeName"/>
+                <xsd:element ref="shared:chargeDescription"/>
+                <xsd:element ref="shared:chargeType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetAvailableChargesResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="AvailableChargeArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of charges
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:AvailableCharge" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:ErrorMessage" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetAvailableLocationsRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:wsVersion"/>
+                <xsd:element ref="shared:id"/>
+                <xsd:element ref="shared:password" minOccurs="0"/>
+                <xsd:element ref="shared:productId"/>
+                <xsd:element ref="shared:localizationCountry"/>
+                <xsd:element ref="shared:localizationLanguage"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="AvailableLocation">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:locationId"/>
+                <xsd:element ref="shared:locationName"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetAvailableLocationsResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="AvailableLocationArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of location names
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:AvailableLocation" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:ErrorMessage" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetConfigurationAndPricingRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:wsVersion"/>
+                <xsd:element ref="shared:id"/>
+                <xsd:element ref="shared:password" minOccurs="0"/>
+                <xsd:element ref="shared:productId"/>
+                <xsd:element ref="shared:partId" minOccurs="0"/>
+                <xsd:element ref="shared:currency"/>
+                <xsd:element ref="shared:fobId"/>
+                <xsd:element ref="shared:priceType"/>
+                <xsd:element ref="shared:localizationCountry"/>
+                <xsd:element ref="shared:localizationLanguage"/>
+                <xsd:element ref="shared:configurationType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Part">
+        <xsd:annotation>
+            <xsd:documentation>This object contains information about a part</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:partId"/>
+                <xsd:element ref="shared:partDescription" minOccurs="0"/>
+                <xsd:element name="PartPriceArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+An Array of part prices
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:PartPrice" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:partGroup"/>
+                <xsd:element ref="shared:nextPartGroup" minOccurs="0"/>
+                <xsd:element ref="shared:partGroupRequired"/>
+                <xsd:element ref="shared:partGroupDescription"/>
+                <xsd:element ref="shared:ratio"/>
+                <xsd:element ref="shared:defaultPart"/>
+                <xsd:element name="LocationIdArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of location id
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="LocationId" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="shared:locationId"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PartPrice">
+        <xsd:annotation>
+            <xsd:documentation>This object contains pricing a product based on the partId.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="minQuantity" type="xsd:int">
+                    <xsd:annotation>
+                        <xsd:documentation>The minimum quantity</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="price">
+                    <xsd:annotation>
+                        <xsd:documentation>The price</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="discountCode" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>The discount code</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="priceUom">
+                    <xsd:annotation>
+                        <xsd:documentation>Enumerated list of unit of measure used to describe the price</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="shared:QuantityUomType">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="2"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="priceEffectiveDate" type="xsd:dateTime" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>The price effective date</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="priceExpiryDate" type="xsd:dateTime" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>The price expiry date</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Location">
+        <xsd:annotation>
+            <xsd:documentation>This object contains decoration and location details for a given part</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:locationId"/>
+                <xsd:element ref="shared:locationName"/>
+                <xsd:element name="DecorationArray">
+                    <xsd:annotation>
+                        <xsd:documentation>
+An Array of decorations
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:Decoration" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:decorationsIncluded"/>
+                <xsd:element ref="shared:defaultLocation"/>
+                <xsd:element ref="shared:maxDecoration"/>
+                <xsd:element ref="shared:minDecoration"/>
+                <xsd:element ref="shared:locationRank"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Decoration">
+        <xsd:annotation>
+            <xsd:documentation>This object contains decoration information that are valid for a specific location</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:decorationId"/>
+                <xsd:element ref="shared:decorationName" minOccurs="0"/>
+                <xsd:element ref="shared:decorationGeometry"/>
+                <xsd:element ref="shared:decorationHeight"/>
+                <xsd:element ref="shared:decorationWidth"/>
+                <xsd:element ref="shared:decorationDiameter"/>
+                <xsd:element ref="shared:decorationUom"/>
+                <xsd:element name="allowSubForDefaultLocation" type="xsd:boolean" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>
+Buyer is allowed to substitute a decoration location without changing the price
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="allowSubForDefaultMethod" type="xsd:boolean" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>
+Buyer is allowed to substitute a decoration method without changing the price
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="itemPartQuantityLTM" type="xsd:int" nillable="1" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+Specifies the Part Quantity where the Less than Minimum (LTM) Setup Charge Applies. 
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ChargeArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of charges
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:Charge" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="decorationUnitsIncluded" type="xsd:int" nillable="1" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>The number of included decoration units.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element ref="shared:decorationUnitsIncludedUom" minOccurs="0"/>
+                <xsd:element ref="shared:decorationUnitsMax" minOccurs="0"/>
+                <xsd:element name="defaultDecoration" type="xsd:boolean" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            The default decoration
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="leadTime" type="xsd:int" nillable="1" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>Lead Time</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="rushLeadTime" type="xsd:int" nillable="1" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>Rush Lead Time</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Charge">
+        <xsd:annotation>
+            <xsd:documentation>This object contains a charge that is associated with the setup of the product, location and decoration configuration.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:chargeId"/>
+                <xsd:element ref="shared:chargeName"/>
+                <xsd:element ref="shared:chargeDescription"/>
+                <xsd:element ref="shared:chargeType"/>
+                <xsd:element name="ChargePriceArray">
+                    <xsd:annotation>
+                        <xsd:documentation>An Array of  charge price</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:ChargePrice" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="chargesAppliesLTM" type="xsd:boolean" nillable="true" minOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>
+The charges applies LTM
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="chargesPerLocation" type="xsd:int" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>
+The number of times a charge will occur per location</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="chargesPerColor" type="xsd:int" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>
+The number of times a charge will occur per color</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="ChargePrice">
+        <xsd:annotation>
+            <xsd:documentation>This object contains a single line of a price grid represented by an X and Y axis.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="xMinQty" type="xsd:int">
+                    <xsd:annotation>
+                        <xsd:documentation>
+The minimum quantity x grid
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="xUom">
+                    <xsd:annotation>
+                        <xsd:documentation>The x grid uom</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="shared:QuantityUomType">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="2"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="yMinQty" type="xsd:int">
+                    <xsd:annotation>
+                        <xsd:documentation>The minimum quantity y grid</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="yUom" type="shared:decorationUomType">
+                    <xsd:annotation>
+                        <xsd:documentation>The y grid uom</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="price">
+                    <xsd:annotation>
+                        <xsd:documentation>
+The price
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="discountCode" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>The discount code</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="repeatPrice">
+                    <xsd:annotation>
+                        <xsd:documentation>repeat price</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                            <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="repeatDiscountCode" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>The repeat discount code</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="1"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="priceEffectiveDate" type="xsd:dateTime" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>The price effective date</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="priceExpiryDate" type="xsd:dateTime" nillable="true">
+                    <xsd:annotation>
+                        <xsd:documentation>The price expiry date</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Configuration">
+        <xsd:annotation>
+            <xsd:documentation>An object to hold Configuration data</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="PartArray">
+                    <xsd:annotation>
+                        <xsd:documentation>An Array of parts</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:Part" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="LocationArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>An Array of Location</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:Location" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:productId"/>
+                <xsd:element ref="shared:currency"/>
+                <xsd:element ref="shared:FobArray"/>
+                <xsd:element ref="shared:priceType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetConfigurationAndPricingResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tns:Configuration" minOccurs="0"/>
+                <xsd:element ref="shared:ErrorMessage" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetDecorationColorsRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:wsVersion"/>
+                <xsd:element ref="shared:id"/>
+                <xsd:element ref="shared:password" minOccurs="0"/>
+                <xsd:element ref="shared:locationId"/>
+                <xsd:element ref="shared:productId"/>
+                <xsd:element ref="shared:decorationId" minOccurs="0"/>
+                <xsd:element ref="shared:localizationCountry"/>
+                <xsd:element ref="shared:localizationLanguage"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Color">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:colorId"/>
+                <xsd:element ref="shared:colorName"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="DecorationMethod">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:decorationId"/>
+                <xsd:element ref="shared:decorationName"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetDecorationColorsResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="DecorationColors" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="ColorArray" minOccurs="0">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                        An Array of colors
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="tns:Color" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element ref="shared:productId"/>
+                            <xsd:element ref="shared:locationId"/>
+                            <xsd:element name="DecorationMethodArray" minOccurs="0">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                        An Array of decoration method
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="tns:DecorationMethod" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="pmsMatch" type="xsd:boolean" nillable="true" minOccurs="1">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                        PMS match or nto
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="fullColor" type="xsd:boolean" nillable="true" minOccurs="1">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                        Full Color or not
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:ErrorMessage" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetFobPointsRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:wsVersion"/>
+                <xsd:element ref="shared:id"/>
+                <xsd:element ref="shared:password" minOccurs="0"/>
+                <xsd:element ref="shared:productId"/>
+                <xsd:element ref="shared:localizationCountry"/>
+                <xsd:element ref="shared:localizationLanguage"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="FobPoint">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:fobId"/>
+                <xsd:element name="fobCity">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            The fob city
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="fobState">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            The fob state
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element ref="shared:fobPostalCode"/>
+                <xsd:element name="fobCountry">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            The fob country
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:minLength value="1"/>
+                            <xsd:maxLength value="64"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:element>
+                <xsd:element name="CurrencySupportedArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of currencies supported
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:CurrencySupported" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="ProductArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of Product Ids
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:Product" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="CurrencySupported">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:currency"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Product">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="shared:productId"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="GetFobPointsResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="FobPointArray" minOccurs="0">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            An Array of fob points
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="tns:FobPoint" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="shared:ErrorMessage" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

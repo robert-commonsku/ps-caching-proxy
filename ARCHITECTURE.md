@@ -37,6 +37,19 @@
 - Geocode IP with heat map
 - Error rates
 
+- IP, date/time (UTC), timing, errors: [], 
+{
+  date,
+  ip,
+  duration, 
+  method,
+  product,
+  account,
+  cache\_hit,
+  soap,
+  errors: []
+}
+
 
 ## Assumptions
 
@@ -117,6 +130,19 @@
 
 **ChargePriceArray**
   - *Request cache key*, User id, chargeId
+
+account:password-hash:<id>
+account:password
+admin:password-hash:<id>
+admin:token:<id>
+setting:company-name
+setting:hostname
+setting:ppc-endpoint
+setting:ppc-version
+setting:product-data-endpoint
+setting:product-data-version
+setting:locales
+setting:default-locale
 
 
 ## Algorithms
