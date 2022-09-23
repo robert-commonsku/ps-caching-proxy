@@ -7,6 +7,7 @@ import {
 import db, { log, updateLogin } from "./db.ts";
 import { getLocale, hasError, getErrorCodes, getErrorTransform } from "./verify.ts";
 import { LogEntry, RequestLogEntry } from "./types.ts";
+import { getParams } from "./utils.ts";
 
 const REQUEST_CACHE_KEY_MAP = {
   getAvailableCharges: [getLocale, "productId"],
@@ -141,6 +142,7 @@ export async function forward(methodName: string, req: PPCRequest, logEntry: Req
     method: methodName,
     accountId: req.id,
     productId: req.productId,
+    params: getParams(),
     duration,
     errors: getErrorCodes(resp)
   } as LogEntry;

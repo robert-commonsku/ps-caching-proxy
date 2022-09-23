@@ -4,6 +4,7 @@ import db, { getPassword, makeKeyIterator, log } from "../db.ts";
 import { getPPCClient, type PPCRequest, type PPCResponse } from "../soap.ts";
 import { store, storeCustomerPricing } from "../backend.ts";
 import { getErrorCodes } from "../verify.ts";
+import { getParams } from "../utils.ts";
 
 const PRICE_TYPES = ["Net", "List", "Customer"];
 const CONFIGURATION_TYPES = ["Blank", "Decorated"];
@@ -40,6 +41,7 @@ export default async function primeCache(job: Job<CachePrime>) {
       method: "getAvailableLocations",
       accountId,
       productId: req.productId,
+      params: getParams(req),
       duration,
       errors: getErrorCodes(resp)
     };

@@ -1,7 +1,6 @@
 import { connect } from "https://deno.land/x/redis/mod.ts";
 import config from "./config.ts";
 import * as bcrypt from "https://deno.land/x/bcrypt/mod.ts";
-import { LogEntry } from "./types.ts";
 
 const db = await connect(config.redis);
 export default db;
