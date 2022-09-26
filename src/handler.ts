@@ -57,7 +57,7 @@ export async function restHandler(methodName: string, req: Request, ctx) {
     ...getQueryParams(req),
     wsVersion: "1.0.0",
     id: accountId,
-    password
+    password,
     localizationLanguage,
     localizationCountry
   };
