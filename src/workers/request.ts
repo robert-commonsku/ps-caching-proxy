@@ -24,21 +24,42 @@ export default async function request({ methodName, params }: DataRequest) {
   if (resp) {
     if ("getAvailableLocations" === methodName) {
       const locations = resp.AvailableLocationArray.AvailableLocation;
+      if (!locations) {
+        logProblem(methodName, {...params, id: accountId}, "location-no-locations");
+	return;
+      }
       const locationIds = (locations.length ? locations : [locations]).map(
         (l) => l.locationId,
       );
+      if (locationIds.length === 0) {
+        logProblem(methodName, {...params, id: accountId}, "location-no-locations");
+	return;
+      }
       await db.del("product-locations:" + params.productId);
       await db.sadd("product-locations:" + params.productId, ...locationIds);
     } else if ("getFobPoints" === methodName) {
-      resp.FobPointArray.FobPoint.forEach(async (f) => {
+      const fobPoints = resp.FobPointArray.FobPoint;
+      if (!fobPoints) {
+        logProblem(methodName, {...params, id: accountId}, "fob-no-fob-points");
+	return;
+      }
+      (fobPoints.length ? fobPoints : [fobPoints]).forEach(async (f) => {
         if (!f.CurrencySupportedArray) {
-          logProblem(methodName, {...params, id: accountId}, "fob-no-currency");
+          logProblem(methodName, {...params, id: accountId}, "fob-no-currency-array");
           return;
         }
-
-        const currencies = f.CurrencySupportedArray.CurrencySupported.map((c) =>
+        const currencyIds = f.CurrencySupportedArray.CurrencySupported;
+	if (!currencyIds) {
+          logProblem(methodName, {...params, id: accountId}, "fob-no-currency");
+          return;
+	}
+        const currencies = (currencyIds.length ? currencyIds : [currencyIds]).map((c) =>
           c.currency
         );
+	if (currencies.length === 0) {
+          logProblem(methodName, {...params, id: accountId}, "fob-no-currency");
+          return;
+	}
         await db.del("fob-point-currencies:" + f.fobId);
         await db.sadd("fob-point-currencies:" + f.fobId, ...currencies);
       });
