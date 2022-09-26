@@ -88,8 +88,9 @@ export default function RequestTimeChart() {
         margin: "3px",
       }}
     >
+      <h2 style={{ fontSize: "0.9rem" }}>Request Times</h2>
       {isClient && (
-        <ResponsiveContainer minWidth="300px">
+        <ResponsiveContainer minWidth="300px" maxHeight="200px">
           <ScatterChart margin={{ top: 0, left: 0, right: 0, bottom: 0 }}>
             <XAxis
               name="Day of Week"

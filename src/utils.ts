@@ -1,6 +1,15 @@
 import type { PPCRequest, PPCParams } from "./types.ts";
 import { makeKeyIterator } from "./db.ts";
 
+export function getQueryParams(req: Request) {
+  const u = new URL(req.url);
+  const params: Record<string, string> = {};
+  for (const p of u.searchParams) {
+      params[p[0]]=p[1];
+  }
+  return params;
+}
+
 export function accounts() {
   return makeKeyIterator(
     "account:password-hash:*",

@@ -130,7 +130,7 @@ export default function RequestDurationChart({
       class="flex-1"
       style={{
         height: "80px",
-        fontSize: "6px",
+        fontSize: "8px",
         border: "1px solid rgba(121, 125, 134, 0.3)",
         borderRadius: 3,
         boxShadow: "1px 1px 1px 0 rgba(121, 125, 134, 0.3)",
@@ -164,9 +164,9 @@ export default function RequestDurationChart({
               type="number"
               domain={[minValue, maxValue]}
               interval="preserveStartEnd"
-              tick={{ fontSize: "0.5em" }}
+              tick={{ fontSize: "0.8em" }}
               unit="ms"
-              height={15}
+              height={20}
               tickSize={2}
               tickLine={{ strokeWidth: 0.5 }}
               axisLine={{ strokeWidth: 0.5 }}
@@ -181,7 +181,7 @@ export default function RequestDurationChart({
             <Legend
               verticalAlign="top"
               iconSize="0.6em"
-              wrapperStyle={{ fontSize: "0.6em" }}
+              wrapperStyle={{ fontSize: "0.8em" }}
             />
             <Area
               type="monotone"

@@ -1,4 +1,31 @@
+import db, { makeSetIterator, makeKeyIterator } from "../db.ts";
+
+interface PopularProduct {
+  productId: string;
+  getAvailableLocations: number;
+  getAvailableCharges: number;
+  getFobPoints: number;
+  getDecorationColors: number;
+  getConfigurationAndPricingNetList: number;
+  getConfigurationAndPricingCustomer: number;
+  total: number;
+}
+
+const CHUNK_SIZE = 1000;
 export default async function calculateStats() {
+  const logKeys = [];
+  for (let logKey of makeKeyIterator("log:*", 1000)) {
+    logKeys.push(logKey);
+  }
+
+  for (let i = 0; i < logKeys.lenght; i += CHUNK_SIZE) {
+    const chunk = logKeys.slice(i, i + CHUNK_SIZE);
+    const logs = await db.mget(...chunk);
+    for (let log of logs) {
+      
+    }
+  }
+
   /* IP based requests
    * - ip, lat, lng, count, country
    * - get all ips from logs

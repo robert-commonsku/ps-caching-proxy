@@ -5,15 +5,14 @@
   - SOAP requests
     - POST /ppc/{version}
   - REST requests
-    - GET /ppc/{version}/docs
     - GET /ppc/{version}/locations/{productId}
     - GET /ppc/{version}/decoration-colors/{productId}/{locationId}
     - GET /ppc/{version}/fob-points/{productId}
     - GET /ppc/{version}/charges/{productId}
-    - GET /ppc/{version}/charges/{productId}
+    - GET /ppc/{version}/config-price/{productId}/{fobId}/{currency}/{configurationType}/{priceType}
     - HTTP Basic Auth for id, password
     - query parameters for other fields
-  - Dashboard (not fully formed yet)
+  - Dashboard
     - GET /
       - Redirect to login if not logged in
 - Redis instance:
@@ -22,20 +21,20 @@
   - Store application settings
   - Use as queue
 - Backend workers:
-  - celery? rq?
-  - supervisord to keep alive?
+  - multiple processes
   - ProductSellable
   - Universal Requests
   - User-Specific Requests
+  - Stats collectors
 
 
 ## Statistics
-- Usage
-  - Who, when 
-- Updates
-- Recency of Data
-- Geocode IP with heat map
-- Error rates
+- Request Duration
+- Timing of Requests (Day of Week, Hour of Day)
+- Location of request (GeoIP)
+- Quantity of Requests
+- Popular Products
+- Active Users
 
 - IP, date/time (UTC), timing, errors: [], 
 {
@@ -46,7 +45,7 @@
   product,
   account,
   cache\_hit,
-  soap,
+  isREST,
   errors: []
 }
 
@@ -55,6 +54,7 @@
 
 - All requests require a password
   - We reject any request without a password
+  - May revise this if suppliers use the id field as a token
 - All methods on the service are available to all authenticated Users
   - We should probably verify this with some spot checks
 - All Users receive the same configuration data when they supply the same inputs
@@ -62,6 +62,7 @@
 - Suppliers are not very careful about price effective dates and price expiry dates
   - We should check frequently
 - Product sellable does not vary by locale
+  - Use inventory service to indicate stock does not exist
   - We should probably verify this with some spot checks
 - Pricing data does not vary by locale
   - We should probably verify this with some spot checks
@@ -98,6 +99,7 @@
 
 **Default TTL**
   - A hint for how frequently the cache should be updated
+
 
 ## Methods with Universal Responses
 
@@ -143,7 +145,22 @@ setting:product-data-endpoint
 setting:product-data-version
 setting:locales
 setting:default-locale
-
+job:<jobId>
+queue:<queueName>:queued
+queue:<queueName>:processing
+queue:<queueName>:failed
+log:<logId>
+ip-data:<ip>
+stats:ip-data:overall
+stats:ip-data:<methodName>
+stats:product-request-counts
+stats:user-request-counts
+stats:request-durations:<methodName>
+stats:request-times:<methodName>
+stats:proxy-requests:<methodName>
+stats:backend-requests:<methodName>
+stats:cache-hits:<methodName>
+problem:<problemId>
 
 ## Algorithms
 

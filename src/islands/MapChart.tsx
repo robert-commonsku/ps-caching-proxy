@@ -627,7 +627,6 @@ export default function MapChart() {
   return (
     <div
       style={{
-        width: "300px",
         border: "1px solid rgba(121, 125, 134, 0.3)",
         borderRadius: 3,
         boxShadow: "1px 1px 1px 0 rgba(121, 125, 134, 0.3)",
@@ -635,6 +634,7 @@ export default function MapChart() {
         margin: "3px",
       }}
     >
+      <h2 style={{ fontSize: "0.9rem" }}>Request Origins</h2>
       <ComposableMap projectionConfig={{ rotate: [-10, 0, 0] }}>
         <Geographies geography={geoUrl}>
           {({ geographies }) =>

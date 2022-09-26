@@ -13,13 +13,15 @@ import * as $6 from "./routes/ppc/1.0.0/fob-points/[productId].ts";
 import * as $7 from "./routes/ppc/1.0.0/index.ts";
 import * as $8 from "./routes/ppc/1.0.0/locations/[productId].ts";
 import * as $9 from "./routes/ppc/_middleware.ts";
-import * as $$0 from "./islands/Badge.tsx";
-import * as $$1 from "./islands/MapChart.tsx";
-import * as $$2 from "./islands/PopularProducts.tsx";
-import * as $$3 from "./islands/RequestDurationChart.tsx";
-import * as $$4 from "./islands/RequestTimeChart.tsx";
-import * as $$5 from "./islands/Select.tsx";
-import * as $$6 from "./islands/TextInput.tsx";
+import * as $$0 from "./islands/ActiveUsers.tsx";
+import * as $$1 from "./islands/Badge.tsx";
+import * as $$2 from "./islands/Issues.tsx";
+import * as $$3 from "./islands/MapChart.tsx";
+import * as $$4 from "./islands/PopularProducts.tsx";
+import * as $$5 from "./islands/RequestDurationChart.tsx";
+import * as $$6 from "./islands/RequestTimeChart.tsx";
+import * as $$7 from "./islands/Select.tsx";
+import * as $$8 from "./islands/TextInput.tsx";
 
 const manifest = {
   routes: {
@@ -36,13 +38,15 @@ const manifest = {
     "./routes/ppc/_middleware.ts": $9,
   },
   islands: {
-    "./islands/Badge.tsx": $$0,
-    "./islands/MapChart.tsx": $$1,
-    "./islands/PopularProducts.tsx": $$2,
-    "./islands/RequestDurationChart.tsx": $$3,
-    "./islands/RequestTimeChart.tsx": $$4,
-    "./islands/Select.tsx": $$5,
-    "./islands/TextInput.tsx": $$6,
+    "./islands/ActiveUsers.tsx": $$0,
+    "./islands/Badge.tsx": $$1,
+    "./islands/Issues.tsx": $$2,
+    "./islands/MapChart.tsx": $$3,
+    "./islands/PopularProducts.tsx": $$4,
+    "./islands/RequestDurationChart.tsx": $$5,
+    "./islands/RequestTimeChart.tsx": $$6,
+    "./islands/Select.tsx": $$7,
+    "./islands/TextInput.tsx": $$8,
   },
   baseUrl: import.meta.url,
   config,

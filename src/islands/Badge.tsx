@@ -19,8 +19,8 @@ export default function Badge(
         margin: "3px",
       }}
     >
-      <h1 style={{ fontSize: "0.2em" }}>{title}</h1>
-      <div>{isPrefixUnit && units}{count}{!isPrefixUnit && units}</div>
+      <h1 style={{ fontSize: "0.4em" }}>{title}</h1>
+      <div style={{ textAlign: "center" }}>{isPrefixUnit && units}{count}{!isPrefixUnit && units}</div>
     </div>
   );
 }

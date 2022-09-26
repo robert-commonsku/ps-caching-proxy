@@ -23,10 +23,14 @@ The supplier requires a PromoStandards PPC v1.0.0 endpoint as well as a ProductD
 
 ## Technologies
 
-- PromoStandards PPC v1.0.0, ProductData v1.0.0, and ProductData v2.0.0
+- PromoStandards:
+  - PPC v1.0.0
+  - ProductData v1.0.0
+  - ProductData v2.0.0
 - Docker
-- Python
-- FastAPI
 - Redis
-- React
+- Deno
+- Deno Fresh
+- Preact
+- Recharts
 

@@ -13,7 +13,7 @@ import {
 } from "./verify.ts";
 import { login } from "./db.ts";
 import { forward, retrieve } from "./backend.ts";
-import { getParams } from "./utils.ts";
+import { getParams, getQueryParams } from "./utils.ts";
 
 function getUnauthorizedResponse() {
   return new Response(
@@ -52,12 +52,15 @@ export async function restHandler(methodName: string, req: Request, ctx) {
   }
   const [localizationLanguage, localizationCountry] = locale.split("-");
 
-  const { params } = ctx;
-  params.wsVersion = "1.0.0";
-  params.id = accountId;
-  params.password = password;
-  params.localizationLanguage = localizationLanguage;
-  params.localizationCountry = localizationCountry;
+  const params = {
+    ...ctx.params,
+    ...getQueryParams(req),
+    wsVersion: "1.0.0",
+    id: accountId,
+    password
+    localizationLanguage,
+    localizationCountry
+  };
 
   return defaultHandler(methodName, params, ctx);
 }

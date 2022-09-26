@@ -61,7 +61,7 @@ export default function PopularProducts() {
         margin: "3px",
       }}
     >
-      <h1>Popular Products</h1>
+      <h2 style={{ fontSize: "0.9rem" }}>Popular Products</h2>
       <table style={{ fontSize: "0.8em" }}>
         <tbody>
           {data.map((d) => (
