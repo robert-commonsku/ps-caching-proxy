@@ -11,8 +11,9 @@ export default async function request({ methodName, params }: DataRequest) {
   const client = await getPPCClient();
 
   let resp;
+  let accountId = params.id;
   if (!params.id) {
-    for await (const accountId of await accounts()) {
+    for await (accountId of await accounts()) {
       resp = await tryRequest(client, methodName, accountId, params);
       if (resp) {
         break;
