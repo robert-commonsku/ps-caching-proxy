@@ -7,7 +7,6 @@ import { hasError, getErrorCodes } from "../verify.ts";
 import { store, storeCustomerPricing } from "../backend.ts";
 
 export default async function request({ methodName, params }: DataRequest) {
-  console.log("request: " + methodName);
   const client = await getPPCClient();
 
   let resp;

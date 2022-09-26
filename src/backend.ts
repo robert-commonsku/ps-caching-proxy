@@ -129,10 +129,8 @@ export async function storeCustomerPricing(
     const prices = normalizePartPriceArray(p.PartPriceArray);
     const priceHash = getPriceHash(prices);
     const priceKey = "partPriceArray:" + priceHash;
-    console.log("storeCustomer Pricing db set prices");
     await db.set(priceKey, JSON.stringify(prices));
     const cacheKey = basePartKey + ":" + p.partId + ":" + req.id;
-    console.log("storeCustomer Pricing db set pointer");
     await db.set(cacheKey, priceKey);
     p.PartPriceArray = [];
   });
@@ -145,11 +143,9 @@ export async function storeCustomerPricing(
               const prices = normalizeChargePriceArray(c.ChargePriceArray);
               const priceHash = getPriceHash(prices);
               const priceKey = "chargePriceArray:" + priceHash;
-              console.log("storeCustomer Pricing db set prices");
               await db.set(priceKey, JSON.stringify(prices));
               const cacheKey = baseChargeKey + ":" + c.chargeId + ":" + req.id;
               await db.set(cacheKey, priceKey);
-              console.log("storeCustomer Pricing db set pointer");
               c.ChargePriceArray = [];
             },
           ),
@@ -240,6 +236,5 @@ export async function store(
     return false;
   }
   const key = getCacheKey(methodName, req);
-  console.log("store db set");
   return await db.set(key, JSON.stringify(resp));
 }

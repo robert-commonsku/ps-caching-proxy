@@ -56,7 +56,6 @@ export async function updateLogin(username: string, password: string) {
   }
   const hash = await bcrypt.hash(`${username}:${password}`);
   // TODO: Encrypt this!!! Bad to keep plain text passwords in datastore
-  console.log("updateLogin db set");
   await db.set(`account:password:${username}`, password);
   return db.set(`account:password-hash:${username}`, hash);
 }
@@ -77,7 +76,6 @@ export async function log(logEntry: LogEntry) {
     logEntry.id = crypto.randomUUID();
   }
   const key = "log:" + logEntry.id;
-  console.log("log db set");
   return await db.set(key, JSON.stringify(logEntry));
 }
 
@@ -201,7 +199,6 @@ export class Queue<Data> {
   }
 
   async failed(job: Job<Data>, error: Error) {
-    console.log(error);
     await db.lrem("queue:" + this.queueName + ":processing", 0, "job:" + job.id);
     if (job.retries > 0) {
       await db.lpush("queue:" + this.queueName + ":queued", "job:" + job.id);
@@ -217,7 +214,6 @@ export class Queue<Data> {
   }
 
   async complete(job: Job<Data>) {
-    console.log("complete: " + job.id + " : " + job.type + " : " + job.data.methodName);
     await db.hset("job:" + job.id, "status", "complete");
     await db.lrem("queue:" + this.queueName + ":processing", 0, "job:" + job.id);
   }

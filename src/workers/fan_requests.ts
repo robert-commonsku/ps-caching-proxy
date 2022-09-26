@@ -5,7 +5,6 @@ import { getSetting } from "../settings.ts";
 import { fobIds } from "../utils.ts";
 
 export default async function fanRequests({ methodName, params }: DataRequest) {
-  console.log("fan-requests: " + methodName);
   let productIds = [];
   for await (let productId of makeSetIterator("products-sellable")) {
     productIds.push(productId);
@@ -123,6 +122,5 @@ export default async function fanRequests({ methodName, params }: DataRequest) {
       productId => queue.add({ methodName, params: { ...baseParams, productId }}, "request")
     );
   }
-  console.log("awaiting fan-requests: " + methodName + " " + requests.length);
   await Promise.all(requests);
 }

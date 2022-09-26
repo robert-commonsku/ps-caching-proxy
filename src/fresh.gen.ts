@@ -6,8 +6,13 @@ import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/api/settings.ts";
 import * as $1 from "./routes/health.ts";
 import * as $2 from "./routes/index.tsx";
-import * as $3 from "./routes/ppc/1.0.0/index.ts";
-import * as $4 from "./routes/ppc/_middleware.ts";
+import * as $3 from "./routes/ppc/1.0.0/charges/[productId].ts";
+import * as $4 from "./routes/ppc/1.0.0/config-price/[productId]/[fobId]/[currency]/[configurationType]/[priceType].ts";
+import * as $5 from "./routes/ppc/1.0.0/decoration-colors/[productId]/[locationId].ts";
+import * as $6 from "./routes/ppc/1.0.0/fob-points/[productId].ts";
+import * as $7 from "./routes/ppc/1.0.0/index.ts";
+import * as $8 from "./routes/ppc/1.0.0/locations/[productId].ts";
+import * as $9 from "./routes/ppc/_middleware.ts";
 import * as $$0 from "./islands/Badge.tsx";
 import * as $$1 from "./islands/MapChart.tsx";
 import * as $$2 from "./islands/PopularProducts.tsx";
@@ -21,8 +26,14 @@ const manifest = {
     "./routes/api/settings.ts": $0,
     "./routes/health.ts": $1,
     "./routes/index.tsx": $2,
-    "./routes/ppc/1.0.0/index.ts": $3,
-    "./routes/ppc/_middleware.ts": $4,
+    "./routes/ppc/1.0.0/charges/[productId].ts": $3,
+    "./routes/ppc/1.0.0/config-price/[productId]/[fobId]/[currency]/[configurationType]/[priceType].ts":
+      $4,
+    "./routes/ppc/1.0.0/decoration-colors/[productId]/[locationId].ts": $5,
+    "./routes/ppc/1.0.0/fob-points/[productId].ts": $6,
+    "./routes/ppc/1.0.0/index.ts": $7,
+    "./routes/ppc/1.0.0/locations/[productId].ts": $8,
+    "./routes/ppc/_middleware.ts": $9,
   },
   islands: {
     "./islands/Badge.tsx": $$0,

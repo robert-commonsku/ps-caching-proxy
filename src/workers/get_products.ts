@@ -11,7 +11,6 @@ import { getSetting } from "../settings.ts";
 import { accounts } from "../utils.ts";
 
 export default async function getProducts() {
-  console.log("get-products");
   const client = await getPDClient();
   let newProducts: string[] = [];
 
