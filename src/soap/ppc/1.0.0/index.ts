@@ -1,4 +1,7 @@
-import { type Client as SoapClient, createClientAsync as soapCreateClientAsync } from "npm:soap";
+import {
+  type Client as SoapClient,
+  createClientAsync as soapCreateClientAsync
+} from "npm:soap";
 
 /**
  * AvailableCharge
@@ -6,14 +9,14 @@ import { type Client as SoapClient, createClientAsync as soapCreateClientAsync }
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface AvailableCharge {
-    /** xsd:int */
-    chargeId?: string;
-    /** xsd:token|minLength,maxLength */
-    chargeName?: string;
-    /** xsd:token|minLength,maxLength */
-    chargeDescription?: string;
-    /** ns2:chargeTypeType|minLength,maxLength */
-    chargeType?: string;
+  /** xsd:int */
+  chargeId?: string;
+  /** xsd:token|minLength,maxLength */
+  chargeName?: string;
+  /** xsd:token|minLength,maxLength */
+  chargeDescription?: string;
+  /** ns2:chargeTypeType|minLength,maxLength */
+  chargeType?: string;
 }
 
 /**
@@ -22,8 +25,8 @@ export interface AvailableCharge {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface AvailableChargeArray {
-    /** AvailableCharge */
-    AvailableCharge?: AvailableCharge;
+  /** AvailableCharge */
+  AvailableCharge?: AvailableCharge;
 }
 
 /**
@@ -32,10 +35,10 @@ export interface AvailableChargeArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface AvailableLocation {
-    /** xsd:int */
-    locationId?: string;
-    /** xsd:string|minLength,maxLength */
-    locationName?: string;
+  /** xsd:int */
+  locationId?: string;
+  /** xsd:string|minLength,maxLength */
+  locationName?: string;
 }
 
 /**
@@ -44,8 +47,8 @@ export interface AvailableLocation {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface AvailableLocationArray {
-    /** AvailableLocation */
-    AvailableLocation?: AvailableLocation;
+  /** AvailableLocation */
+  AvailableLocation?: AvailableLocation;
 }
 
 /**
@@ -54,22 +57,22 @@ export interface AvailableLocationArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Charge {
-    /** xsd:int */
-    chargeId?: string;
-    /** xsd:token|minLength,maxLength */
-    chargeName?: string;
-    /** xsd:token|minLength,maxLength */
-    chargeDescription?: string;
-    /** ns2:chargeTypeType|minLength,maxLength */
-    chargeType?: string;
-    /** ChargePriceArray */
-    ChargePriceArray?: ChargePriceArray;
-    /** xsd:boolean */
-    chargesAppliesLTM?: string;
-    /** xsd:int */
-    chargesPerLocation?: string;
-    /** xsd:int */
-    chargesPerColor?: string;
+  /** xsd:int */
+  chargeId?: string;
+  /** xsd:token|minLength,maxLength */
+  chargeName?: string;
+  /** xsd:token|minLength,maxLength */
+  chargeDescription?: string;
+  /** ns2:chargeTypeType|minLength,maxLength */
+  chargeType?: string;
+  /** ChargePriceArray */
+  ChargePriceArray?: ChargePriceArray;
+  /** xsd:boolean */
+  chargesAppliesLTM?: string;
+  /** xsd:int */
+  chargesPerLocation?: string;
+  /** xsd:int */
+  chargesPerColor?: string;
 }
 
 /**
@@ -78,32 +81,32 @@ export interface Charge {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface ChargeArray {
-    /** Charge */
-    Charge?: Charge;
+  /** Charge */
+  Charge?: Charge;
 }
 
 /** ChargePrice */
 export interface ChargePrice {
-    /** xsd:int */
-    xMinQty?: string;
-    /** shared:QuantityUomType|minLength,maxLength */
-    xUom?: string;
-    /** xsd:int */
-    yMinQty?: string;
-    /** decorationUomType|xsd:string|Colors,Inches,Locations,Other,Stitches,SquareInches */
-    yUom?: string;
-    /** xsd:decimal|fractionDigits */
-    price?: string;
-    /** xsd:string|minLength,maxLength */
-    discountCode?: string;
-    /** xsd:decimal|fractionDigits */
-    repeatPrice?: string;
-    /** xsd:string|minLength,maxLength */
-    repeatDiscountCode?: string;
-    /** xsd:dateTime */
-    priceEffectiveDate?: string;
-    /** xsd:dateTime */
-    priceExpiryDate?: string;
+  /** xsd:int */
+  xMinQty?: string;
+  /** shared:QuantityUomType|minLength,maxLength */
+  xUom?: string;
+  /** xsd:int */
+  yMinQty?: string;
+  /** decorationUomType|xsd:string|Colors,Inches,Locations,Other,Stitches,SquareInches */
+  yUom?: string;
+  /** xsd:decimal|fractionDigits */
+  price?: string;
+  /** xsd:string|minLength,maxLength */
+  discountCode?: string;
+  /** xsd:decimal|fractionDigits */
+  repeatPrice?: string;
+  /** xsd:string|minLength,maxLength */
+  repeatDiscountCode?: string;
+  /** xsd:dateTime */
+  priceEffectiveDate?: string;
+  /** xsd:dateTime */
+  priceExpiryDate?: string;
 }
 
 /**
@@ -112,8 +115,8 @@ export interface ChargePrice {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface ChargePriceArray {
-    /** ChargePrice */
-    ChargePrice?: ChargePrice;
+  /** ChargePrice */
+  ChargePrice?: ChargePrice;
 }
 
 /**
@@ -122,10 +125,10 @@ export interface ChargePriceArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Color {
-    /** xsd:token|minLength,maxLength */
-    colorId?: string;
-    /** xsd:token|minLength,maxLength */
-    colorName?: string;
+  /** xsd:token|minLength,maxLength */
+  colorId?: string;
+  /** xsd:token|minLength,maxLength */
+  colorName?: string;
 }
 
 /**
@@ -134,8 +137,8 @@ export interface Color {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface ColorArray {
-    /** Color */
-    Color?: Color;
+  /** Color */
+  Color?: Color;
 }
 
 /**
@@ -144,18 +147,18 @@ export interface ColorArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Configuration {
-    /** PartArray */
-    PartArray?: PartArray;
-    /** LocationArray */
-    LocationArray?: LocationArray;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
-    currency?: string;
-    /** FobArray */
-    FobArray?: FobArray;
-    /** xsd:string|Customer,List,Net */
-    priceType?: string;
+  /** PartArray */
+  PartArray?: PartArray;
+  /** LocationArray */
+  LocationArray?: LocationArray;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
+  currency?: string;
+  /** FobArray */
+  FobArray?: FobArray;
+  /** xsd:string|Customer,List,Net */
+  priceType?: string;
 }
 
 /**
@@ -164,8 +167,8 @@ export interface Configuration {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface CurrencySupported {
-    /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
-    currency?: string;
+  /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
+  currency?: string;
 }
 
 /**
@@ -174,8 +177,8 @@ export interface CurrencySupported {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface CurrencySupportedArray {
-    /** CurrencySupported */
-    CurrencySupported?: CurrencySupported;
+  /** CurrencySupported */
+  CurrencySupported?: CurrencySupported;
 }
 
 /**
@@ -184,40 +187,40 @@ export interface CurrencySupportedArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Decoration {
-    /** xsd:int */
-    decorationId?: string;
-    /** xsd:string|minLength,maxLength */
-    decorationName?: string;
-    /** xsd:string|minLength,maxLength */
-    decorationGeometry?: string;
-    /** xsd:decimal|fractionDigits */
-    decorationHeight?: string;
-    /** xsd:decimal|fractionDigits */
-    decorationWidth?: string;
-    /** xsd:decimal|fractionDigits */
-    decorationDiameter?: string;
-    /** ns2:decorationUomType|minLength,maxLength */
-    decorationUom?: string;
-    /** xsd:boolean */
-    allowSubForDefaultLocation?: string;
-    /** xsd:boolean */
-    allowSubForDefaultMethod?: string;
-    /** xsd:int */
-    itemPartQuantityLTM?: string;
-    /** ChargeArray */
-    ChargeArray?: ChargeArray;
-    /** xsd:int */
-    decorationUnitsIncluded?: string;
-    /** xsd:string|minLength,maxLength */
-    decorationUnitsIncludedUom?: string;
-    /** xsd:int */
-    decorationUnitsMax?: string;
-    /** xsd:boolean */
-    defaultDecoration?: string;
-    /** xsd:int */
-    leadTime?: string;
-    /** xsd:int */
-    rushLeadTime?: string;
+  /** xsd:int */
+  decorationId?: string;
+  /** xsd:string|minLength,maxLength */
+  decorationName?: string;
+  /** xsd:string|minLength,maxLength */
+  decorationGeometry?: string;
+  /** xsd:decimal|fractionDigits */
+  decorationHeight?: string;
+  /** xsd:decimal|fractionDigits */
+  decorationWidth?: string;
+  /** xsd:decimal|fractionDigits */
+  decorationDiameter?: string;
+  /** ns2:decorationUomType|minLength,maxLength */
+  decorationUom?: string;
+  /** xsd:boolean */
+  allowSubForDefaultLocation?: string;
+  /** xsd:boolean */
+  allowSubForDefaultMethod?: string;
+  /** xsd:int */
+  itemPartQuantityLTM?: string;
+  /** ChargeArray */
+  ChargeArray?: ChargeArray;
+  /** xsd:int */
+  decorationUnitsIncluded?: string;
+  /** xsd:string|minLength,maxLength */
+  decorationUnitsIncludedUom?: string;
+  /** xsd:int */
+  decorationUnitsMax?: string;
+  /** xsd:boolean */
+  defaultDecoration?: string;
+  /** xsd:int */
+  leadTime?: string;
+  /** xsd:int */
+  rushLeadTime?: string;
 }
 
 /**
@@ -226,8 +229,8 @@ export interface Decoration {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface DecorationArray {
-    /** Decoration */
-    Decoration?: Decoration;
+  /** Decoration */
+  Decoration?: Decoration;
 }
 
 /**
@@ -236,18 +239,18 @@ export interface DecorationArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface DecorationColors {
-    /** ColorArray */
-    ColorArray?: ColorArray;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:int */
-    locationId?: string;
-    /** DecorationMethodArray */
-    DecorationMethodArray?: DecorationMethodArray;
-    /** xsd:boolean */
-    pmsMatch?: string;
-    /** xsd:boolean */
-    fullColor?: string;
+  /** ColorArray */
+  ColorArray?: ColorArray;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:int */
+  locationId?: string;
+  /** DecorationMethodArray */
+  DecorationMethodArray?: DecorationMethodArray;
+  /** xsd:boolean */
+  pmsMatch?: string;
+  /** xsd:boolean */
+  fullColor?: string;
 }
 
 /**
@@ -256,10 +259,10 @@ export interface DecorationColors {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface DecorationMethod {
-    /** xsd:int */
-    decorationId?: string;
-    /** xsd:string|minLength,maxLength */
-    decorationName?: string;
+  /** xsd:int */
+  decorationId?: string;
+  /** xsd:string|minLength,maxLength */
+  decorationName?: string;
 }
 
 /**
@@ -268,16 +271,16 @@ export interface DecorationMethod {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface DecorationMethodArray {
-    /** DecorationMethod */
-    DecorationMethod?: DecorationMethod;
+  /** DecorationMethod */
+  DecorationMethod?: DecorationMethod;
 }
 
 /** ErrorMessage */
 export interface ErrorMessage {
-    /** xsd:int */
-    code?: string;
-    /** xsd:token|minLength,maxLength */
-    description?: string;
+  /** xsd:int */
+  code?: string;
+  /** xsd:token|minLength,maxLength */
+  description?: string;
 }
 
 /**
@@ -286,16 +289,16 @@ export interface ErrorMessage {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Fob {
-    /** xsd:token|minLength,maxLength */
-    fobId?: string;
-    /** xsd:string|minLength,maxLength */
-    fobPostalCode?: string;
+  /** xsd:token|minLength,maxLength */
+  fobId?: string;
+  /** xsd:string|minLength,maxLength */
+  fobPostalCode?: string;
 }
 
 /** FobArray */
 export interface FobArray {
-    /** Fob[] */
-    Fob?: Array<Fob>;
+  /** Fob[] */
+  Fob?: Array<Fob>;
 }
 
 /**
@@ -304,20 +307,20 @@ export interface FobArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface FobPoint {
-    /** xsd:token|minLength,maxLength */
-    fobId?: string;
-    /** xsd:string|minLength,maxLength */
-    fobCity?: string;
-    /** xsd:string|minLength,maxLength */
-    fobState?: string;
-    /** xsd:string|minLength,maxLength */
-    fobPostalCode?: string;
-    /** xsd:string|minLength,maxLength */
-    fobCountry?: string;
-    /** CurrencySupportedArray */
-    CurrencySupportedArray?: CurrencySupportedArray;
-    /** ProductArray */
-    ProductArray?: ProductArray;
+  /** xsd:token|minLength,maxLength */
+  fobId?: string;
+  /** xsd:string|minLength,maxLength */
+  fobCity?: string;
+  /** xsd:string|minLength,maxLength */
+  fobState?: string;
+  /** xsd:string|minLength,maxLength */
+  fobPostalCode?: string;
+  /** xsd:string|minLength,maxLength */
+  fobCountry?: string;
+  /** CurrencySupportedArray */
+  CurrencySupportedArray?: CurrencySupportedArray;
+  /** ProductArray */
+  ProductArray?: ProductArray;
 }
 
 /**
@@ -326,8 +329,8 @@ export interface FobPoint {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface FobPointArray {
-    /** FobPoint */
-    FobPoint?: FobPoint;
+  /** FobPoint */
+  FobPoint?: FobPoint;
 }
 
 /**
@@ -336,18 +339,18 @@ export interface FobPointArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetAvailableChargesRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:string|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:string|minLength,maxLength */
-    localizationLanguage?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:string|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:string|minLength,maxLength */
+  localizationLanguage?: string;
 }
 
 /**
@@ -356,10 +359,10 @@ export interface GetAvailableChargesRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetAvailableChargesResponse {
-    /** AvailableChargeArray */
-    AvailableChargeArray?: AvailableChargeArray;
-    /** ErrorMessage */
-    ErrorMessage?: ErrorMessage;
+  /** AvailableChargeArray */
+  AvailableChargeArray?: AvailableChargeArray;
+  /** ErrorMessage */
+  ErrorMessage?: ErrorMessage;
 }
 
 /**
@@ -368,18 +371,18 @@ export interface GetAvailableChargesResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetAvailableLocationsRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:string|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:string|minLength,maxLength */
-    localizationLanguage?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:string|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:string|minLength,maxLength */
+  localizationLanguage?: string;
 }
 
 /**
@@ -388,10 +391,10 @@ export interface GetAvailableLocationsRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetAvailableLocationsResponse {
-    /** AvailableLocationArray */
-    AvailableLocationArray?: AvailableLocationArray;
-    /** ErrorMessage */
-    ErrorMessage?: ErrorMessage;
+  /** AvailableLocationArray */
+  AvailableLocationArray?: AvailableLocationArray;
+  /** ErrorMessage */
+  ErrorMessage?: ErrorMessage;
 }
 
 /**
@@ -400,28 +403,28 @@ export interface GetAvailableLocationsResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetConfigurationAndPricingRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
-    /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
-    currency?: string;
-    /** xsd:token|minLength,maxLength */
-    fobId?: string;
-    /** xsd:string|Customer,List,Net */
-    priceType?: string;
-    /** xsd:string|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:string|minLength,maxLength */
-    localizationLanguage?: string;
-    /** xsd:string|Blank,Decorated */
-    configurationType?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
+  /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
+  currency?: string;
+  /** xsd:token|minLength,maxLength */
+  fobId?: string;
+  /** xsd:string|Customer,List,Net */
+  priceType?: string;
+  /** xsd:string|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:string|minLength,maxLength */
+  localizationLanguage?: string;
+  /** xsd:string|Blank,Decorated */
+  configurationType?: string;
 }
 
 /**
@@ -430,10 +433,10 @@ export interface GetConfigurationAndPricingRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetConfigurationAndPricingResponse {
-    /** Configuration */
-    Configuration?: Configuration;
-    /** ErrorMessage */
-    ErrorMessage?: ErrorMessage;
+  /** Configuration */
+  Configuration?: Configuration;
+  /** ErrorMessage */
+  ErrorMessage?: ErrorMessage;
 }
 
 /**
@@ -442,22 +445,22 @@ export interface GetConfigurationAndPricingResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetDecorationColorsRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:int */
-    locationId?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:int */
-    decorationId?: string;
-    /** xsd:string|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:string|minLength,maxLength */
-    localizationLanguage?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:int */
+  locationId?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:int */
+  decorationId?: string;
+  /** xsd:string|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:string|minLength,maxLength */
+  localizationLanguage?: string;
 }
 
 /**
@@ -466,10 +469,10 @@ export interface GetDecorationColorsRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetDecorationColorsResponse {
-    /** DecorationColors */
-    DecorationColors?: DecorationColors;
-    /** ErrorMessage */
-    ErrorMessage?: ErrorMessage;
+  /** DecorationColors */
+  DecorationColors?: DecorationColors;
+  /** ErrorMessage */
+  ErrorMessage?: ErrorMessage;
 }
 
 /**
@@ -478,18 +481,18 @@ export interface GetDecorationColorsResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetFobPointsRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:string|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:string|minLength,maxLength */
-    localizationLanguage?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:string|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:string|minLength,maxLength */
+  localizationLanguage?: string;
 }
 
 /**
@@ -498,10 +501,10 @@ export interface GetFobPointsRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface GetFobPointsResponse {
-    /** FobPointArray */
-    FobPointArray?: FobPointArray;
-    /** ErrorMessage */
-    ErrorMessage?: ErrorMessage;
+  /** FobPointArray */
+  FobPointArray?: FobPointArray;
+  /** ErrorMessage */
+  ErrorMessage?: ErrorMessage;
 }
 
 /**
@@ -510,22 +513,22 @@ export interface GetFobPointsResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Location {
-    /** xsd:int */
-    locationId?: string;
-    /** xsd:string|minLength,maxLength */
-    locationName?: string;
-    /** DecorationArray */
-    DecorationArray?: DecorationArray;
-    /** xsd:int */
-    decorationsIncluded?: string;
-    /** xsd:boolean */
-    defaultLocation?: string;
-    /** xsd:int */
-    maxDecoration?: string;
-    /** xsd:int */
-    minDecoration?: string;
-    /** xsd:int */
-    locationRank?: string;
+  /** xsd:int */
+  locationId?: string;
+  /** xsd:string|minLength,maxLength */
+  locationName?: string;
+  /** DecorationArray */
+  DecorationArray?: DecorationArray;
+  /** xsd:int */
+  decorationsIncluded?: string;
+  /** xsd:boolean */
+  defaultLocation?: string;
+  /** xsd:int */
+  maxDecoration?: string;
+  /** xsd:int */
+  minDecoration?: string;
+  /** xsd:int */
+  locationRank?: string;
 }
 
 /**
@@ -534,8 +537,8 @@ export interface Location {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface LocationArray {
-    /** Location */
-    Location?: Location;
+  /** Location */
+  Location?: Location;
 }
 
 /**
@@ -544,14 +547,14 @@ export interface LocationArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface LocationId {
-    /** xsd:int */
-    locationId?: string;
+  /** xsd:int */
+  locationId?: string;
 }
 
 /** LocationIdArray */
 export interface LocationIdArray {
-    /** LocationId[] */
-    LocationId?: Array<LocationId>;
+  /** LocationId[] */
+  LocationId?: Array<LocationId>;
 }
 
 /**
@@ -560,26 +563,26 @@ export interface LocationIdArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Part {
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
-    /** xsd:token|minLength,maxLength */
-    partDescription?: string;
-    /** PartPriceArray */
-    PartPriceArray?: PartPriceArray;
-    /** xsd:int */
-    partGroup?: string;
-    /** xsd:int */
-    nextPartGroup?: string;
-    /** xsd:boolean */
-    partGroupRequired?: string;
-    /** xsd:token|minLength,maxLength */
-    partGroupDescription?: string;
-    /** xsd:decimal|fractionDigits */
-    ratio?: string;
-    /** xsd:boolean */
-    defaultPart?: string;
-    /** LocationIdArray */
-    LocationIdArray?: LocationIdArray;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
+  /** xsd:token|minLength,maxLength */
+  partDescription?: string;
+  /** PartPriceArray */
+  PartPriceArray?: PartPriceArray;
+  /** xsd:int */
+  partGroup?: string;
+  /** xsd:int */
+  nextPartGroup?: string;
+  /** xsd:boolean */
+  partGroupRequired?: string;
+  /** xsd:token|minLength,maxLength */
+  partGroupDescription?: string;
+  /** xsd:decimal|fractionDigits */
+  ratio?: string;
+  /** xsd:boolean */
+  defaultPart?: string;
+  /** LocationIdArray */
+  LocationIdArray?: LocationIdArray;
 }
 
 /**
@@ -588,24 +591,24 @@ export interface Part {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface PartArray {
-    /** Part */
-    Part?: Part;
+  /** Part */
+  Part?: Part;
 }
 
 /** PartPrice */
 export interface PartPrice {
-    /** xsd:int */
-    minQuantity?: string;
-    /** xsd:decimal|fractionDigits */
-    price?: string;
-    /** xsd:string|minLength,maxLength */
-    discountCode?: string;
-    /** shared:QuantityUomType|minLength,maxLength */
-    priceUom?: string;
-    /** xsd:dateTime */
-    priceEffectiveDate?: string;
-    /** xsd:dateTime */
-    priceExpiryDate?: string;
+  /** xsd:int */
+  minQuantity?: string;
+  /** xsd:decimal|fractionDigits */
+  price?: string;
+  /** xsd:string|minLength,maxLength */
+  discountCode?: string;
+  /** shared:QuantityUomType|minLength,maxLength */
+  priceUom?: string;
+  /** xsd:dateTime */
+  priceEffectiveDate?: string;
+  /** xsd:dateTime */
+  priceExpiryDate?: string;
 }
 
 /**
@@ -614,8 +617,8 @@ export interface PartPrice {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface PartPriceArray {
-    /** PartPrice */
-    PartPrice?: PartPrice;
+  /** PartPrice */
+  PartPrice?: PartPrice;
 }
 
 /**
@@ -624,8 +627,8 @@ export interface PartPriceArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/SharedObjects/`
  */
 export interface Product {
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
 }
 
 /**
@@ -634,37 +637,139 @@ export interface Product {
  * @targetNamespace `http://www.promostandards.org/WSDL/PricingAndConfiguration/1.0.0/`
  */
 export interface ProductArray {
-    /** Product */
-    Product?: Product;
+  /** Product */
+  Product?: Product;
 }
 
-export type PPCRequest = GetAvailableChargesRequest | GetAvailableLocationsRequest | GetConfigurationAndPricingRequest | GetDecorationColorsRequest | GetFobPointsRequest;
+export type PPCRequest =
+  | GetAvailableChargesRequest
+  | GetAvailableLocationsRequest
+  | GetConfigurationAndPricingRequest
+  | GetDecorationColorsRequest
+  | GetFobPointsRequest;
 
-export type PPCResponse = GetAvailableChargesResponse | GetAvailableLocationsResponse | GetConfigurationAndPricingResponse | GetDecorationColorsResponse | GetFobPointsResponse;
-
+export type PPCResponse =
+  | GetAvailableChargesResponse
+  | GetAvailableLocationsResponse
+  | GetConfigurationAndPricingResponse
+  | GetDecorationColorsResponse
+  | GetFobPointsResponse;
 
 export interface PricingAndConfigurationServiceBinding {
-    getAvailableLocations(getAvailableLocationsRequest: GetAvailableLocationsRequest, callback: (err: any, result: GetAvailableLocationsResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getDecorationColors(getDecorationColorsRequest: GetDecorationColorsRequest, callback: (err: any, result: GetDecorationColorsResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getFobPoints(getFobPointsRequest: GetFobPointsRequest, callback: (err: any, result: GetFobPointsResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getAvailableCharges(getAvailableChargesRequest: GetAvailableChargesRequest, callback: (err: any, result: GetAvailableChargesResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getConfigurationAndPricing(getConfigurationAndPricingRequest: GetConfigurationAndPricingRequest, callback: (err: any, result: GetConfigurationAndPricingResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
+  getAvailableLocations(
+    getAvailableLocationsRequest: GetAvailableLocationsRequest,
+    callback: (
+      err: any,
+      result: GetAvailableLocationsResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getDecorationColors(
+    getDecorationColorsRequest: GetDecorationColorsRequest,
+    callback: (
+      err: any,
+      result: GetDecorationColorsResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getFobPoints(
+    getFobPointsRequest: GetFobPointsRequest,
+    callback: (
+      err: any,
+      result: GetFobPointsResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getAvailableCharges(
+    getAvailableChargesRequest: GetAvailableChargesRequest,
+    callback: (
+      err: any,
+      result: GetAvailableChargesResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getConfigurationAndPricing(
+    getConfigurationAndPricingRequest: GetConfigurationAndPricingRequest,
+    callback: (
+      err: any,
+      result: GetConfigurationAndPricingResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
 }
 
 export interface PricingAndConfigurationService {
-    readonly PricingAndConfigurationServiceBinding: PricingAndConfigurationServiceBinding;
+  readonly PricingAndConfigurationServiceBinding:
+    PricingAndConfigurationServiceBinding;
 }
 
 export interface PricingAndConfigurationClient extends SoapClient {
-    PricingAndConfigurationService: PricingAndConfigurationService;
-    getAvailableLocationsAsync(getAvailableLocationsRequest: GetAvailableLocationsRequest): Promise<[result: GetAvailableLocationsResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getDecorationColorsAsync(getDecorationColorsRequest: GetDecorationColorsRequest): Promise<[result: GetDecorationColorsResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getFobPointsAsync(getFobPointsRequest: GetFobPointsRequest): Promise<[result: GetFobPointsResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getAvailableChargesAsync(getAvailableChargesRequest: GetAvailableChargesRequest): Promise<[result: GetAvailableChargesResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getConfigurationAndPricingAsync(getConfigurationAndPricingRequest: GetConfigurationAndPricingRequest): Promise<[result: GetConfigurationAndPricingResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
+  PricingAndConfigurationService: PricingAndConfigurationService;
+  getAvailableLocationsAsync(
+    getAvailableLocationsRequest: GetAvailableLocationsRequest,
+  ): Promise<
+    [
+      result: GetAvailableLocationsResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getDecorationColorsAsync(
+    getDecorationColorsRequest: GetDecorationColorsRequest,
+  ): Promise<
+    [
+      result: GetDecorationColorsResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getFobPointsAsync(
+    getFobPointsRequest: GetFobPointsRequest,
+  ): Promise<
+    [
+      result: GetFobPointsResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getAvailableChargesAsync(
+    getAvailableChargesRequest: GetAvailableChargesRequest,
+  ): Promise<
+    [
+      result: GetAvailableChargesResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getConfigurationAndPricingAsync(
+    getConfigurationAndPricingRequest: GetConfigurationAndPricingRequest,
+  ): Promise<
+    [
+      result: GetConfigurationAndPricingResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
 }
 
 /** Create PricingAndConfigurationClient */
-export function createClientAsync(...args: Parameters<typeof soapCreateClientAsync>): Promise<PricingAndConfigurationClient> {
-    return soapCreateClientAsync(args[0], args[1], args[2]) as any;
+export function createClientAsync(
+  ...args: Parameters<typeof soapCreateClientAsync>
+): Promise<PricingAndConfigurationClient> {
+  return soapCreateClientAsync(args[0], args[1], args[2]) as any;
 }

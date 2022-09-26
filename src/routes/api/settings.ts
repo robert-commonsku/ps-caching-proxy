@@ -8,5 +8,5 @@ export const handler: Handlers<AppSettings> = {
     await saveSettings(settings);
     const new_settings = await getSettings();
     return new Response(new_settings);
-  }
+  },
 };

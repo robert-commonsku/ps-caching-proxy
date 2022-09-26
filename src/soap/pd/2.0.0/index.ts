@@ -1,4 +1,7 @@
-import { type Client as SoapClient, createClientAsync as soapCreateClientAsync } from "npm:soap";
+import {
+  type Client as SoapClient,
+  createClientAsync as soapCreateClientAsync,
+} from "npm:soap";
 
 /**
  * ApparelSizeArray
@@ -6,18 +9,18 @@ import { type Client as SoapClient, createClientAsync as soapCreateClientAsync }
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ApparelSizeArray {
-    /** ApparelSize */
-    ApparelSize?: ApparelSize;
+  /** ApparelSize */
+  ApparelSize?: ApparelSize;
 }
 
 /** ApparelSize */
 export interface ApparelSize {
-    /** ns2:apparelStyleEnum|minLength,maxLength */
-    apparelStyle?: string;
-    /** ns2:labelSizeEnum|minLength,maxLength */
-    labelSize?: string;
-    /** xsd:token|minLength,maxLength */
-    customSize?: string;
+  /** ns2:apparelStyleEnum|minLength,maxLength */
+  apparelStyle?: string;
+  /** ns2:labelSizeEnum|minLength,maxLength */
+  labelSize?: string;
+  /** xsd:token|minLength,maxLength */
+  customSize?: string;
 }
 
 /**
@@ -26,20 +29,20 @@ export interface ApparelSize {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ColorArray {
-    /** Color */
-    Color?: Color;
+  /** Color */
+  Color?: Color;
 }
 
 /** Color */
 export interface Color {
-    /** xsd:token|minLength,maxLength */
-    standardColorName?: string;
-    /** xsd:token|minLength,maxLength */
-    hex?: string;
-    /** xsd:token|minLength,maxLength */
-    approximatePms?: string;
-    /** xsd:token|minLength,maxLength */
-    colorName?: string;
+  /** xsd:token|minLength,maxLength */
+  standardColorName?: string;
+  /** xsd:token|minLength,maxLength */
+  hex?: string;
+  /** xsd:token|minLength,maxLength */
+  approximatePms?: string;
+  /** xsd:token|minLength,maxLength */
+  colorName?: string;
 }
 
 /**
@@ -48,18 +51,18 @@ export interface Color {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface Dimension {
-    /** ns2:dimensionUomEnum|maxLength,minLength */
-    dimensionUom?: string;
-    /** xsd:decimal */
-    depth?: string;
-    /** xsd:decimal */
-    height?: string;
-    /** xsd:decimal */
-    width?: string;
-    /** ns2:weightUomEnum|maxLength,minLength */
-    weightUom?: string;
-    /** xsd:decimal */
-    weight?: string;
+  /** ns2:dimensionUomEnum|maxLength,minLength */
+  dimensionUom?: string;
+  /** xsd:decimal */
+  depth?: string;
+  /** xsd:decimal */
+  height?: string;
+  /** xsd:decimal */
+  width?: string;
+  /** ns2:weightUomEnum|maxLength,minLength */
+  weightUom?: string;
+  /** xsd:decimal */
+  weight?: string;
 }
 
 /**
@@ -68,8 +71,8 @@ export interface Dimension {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface FobPointArray {
-    /** FobPoint */
-    FobPoint?: FobPoint;
+  /** FobPoint */
+  FobPoint?: FobPoint;
 }
 
 /**
@@ -78,16 +81,16 @@ export interface FobPointArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface FobPoint {
-    /** xsd:token|minLength,maxLength */
-    fobId?: string;
-    /** xsd:string|minLength,maxLength */
-    fobCity?: string;
-    /** xsd:string|minLength,maxLength */
-    fobState?: string;
-    /** xsd:string|minLength,maxLength */
-    fobPostalCode?: string;
-    /** xsd:string|minLength,maxLength */
-    fobCountry?: string;
+  /** xsd:token|minLength,maxLength */
+  fobId?: string;
+  /** xsd:string|minLength,maxLength */
+  fobCity?: string;
+  /** xsd:string|minLength,maxLength */
+  fobState?: string;
+  /** xsd:string|minLength,maxLength */
+  fobPostalCode?: string;
+  /** xsd:string|minLength,maxLength */
+  fobCountry?: string;
 }
 
 /**
@@ -96,12 +99,12 @@ export interface FobPoint {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductCloseOutRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
 }
 
 /**
@@ -110,10 +113,10 @@ export interface GetProductCloseOutRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductCloseOutResponse {
-    /** ProductCloseOutArray */
-    ProductCloseOutArray?: ProductCloseOutArray;
-    /** ServiceMessageArray */
-    ServiceMessageArray?: ServiceMessageArray;
+  /** ProductCloseOutArray */
+  ProductCloseOutArray?: ProductCloseOutArray;
+  /** ServiceMessageArray */
+  ServiceMessageArray?: ServiceMessageArray;
 }
 
 /**
@@ -122,14 +125,14 @@ export interface GetProductCloseOutResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductDateModifiedRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:dateTime */
-    changeTimeStamp?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:dateTime */
+  changeTimeStamp?: string;
 }
 
 /**
@@ -138,10 +141,10 @@ export interface GetProductDateModifiedRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductDateModifiedResponse {
-    /** ProductDateModifiedArray */
-    ProductDateModifiedArray?: ProductDateModifiedArray;
-    /** ServiceMessageArray */
-    ServiceMessageArray?: ServiceMessageArray;
+  /** ProductDateModifiedArray */
+  ProductDateModifiedArray?: ProductDateModifiedArray;
+  /** ServiceMessageArray */
+  ServiceMessageArray?: ServiceMessageArray;
 }
 
 /**
@@ -150,24 +153,24 @@ export interface GetProductDateModifiedResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:token|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:token|minLength,maxLength */
-    localizationLanguage?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
-    /** xsd:token|minLength,maxLength */
-    colorName?: string;
-    /** ApparelSizeArray */
-    ApparelSizeArray?: ApparelSizeArray;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:token|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:token|minLength,maxLength */
+  localizationLanguage?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
+  /** xsd:token|minLength,maxLength */
+  colorName?: string;
+  /** ApparelSizeArray */
+  ApparelSizeArray?: ApparelSizeArray;
 }
 
 /**
@@ -176,10 +179,10 @@ export interface GetProductRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductResponse {
-    /** Product */
-    Product?: Product;
-    /** ServiceMessageArray */
-    ServiceMessageArray?: ServiceMessageArray;
+  /** Product */
+  Product?: Product;
+  /** ServiceMessageArray */
+  ServiceMessageArray?: ServiceMessageArray;
 }
 
 /**
@@ -188,24 +191,24 @@ export interface GetProductResponse {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductSellableRequest {
-    /** xsd:token|minLength,maxLength */
-    wsVersion?: string;
-    /** xsd:token|minLength,maxLength */
-    id?: string;
-    /** xsd:token|minLength,maxLength */
-    password?: string;
-    /** xsd:token|maxLength,minLength */
-    localizationCountry?: string;
-    /** xsd:token|minLength,maxLength */
-    localizationLanguage?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
-    /** xsd:token|maxLength,minLength */
-    lineName?: string;
-    /** xsd:boolean */
-    isSellable?: string;
+  /** xsd:token|minLength,maxLength */
+  wsVersion?: string;
+  /** xsd:token|minLength,maxLength */
+  id?: string;
+  /** xsd:token|minLength,maxLength */
+  password?: string;
+  /** xsd:token|maxLength,minLength */
+  localizationCountry?: string;
+  /** xsd:token|minLength,maxLength */
+  localizationLanguage?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
+  /** xsd:token|maxLength,minLength */
+  lineName?: string;
+  /** xsd:boolean */
+  isSellable?: boolean;
 }
 
 /**
@@ -214,30 +217,30 @@ export interface GetProductSellableRequest {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface GetProductSellableResponse {
-    /** ProductSellableArray */
-    ProductSellableArray?: ProductSellableArray;
-    /** ServiceMessageArray */
-    ServiceMessageArray?: ServiceMessageArray;
+  /** ProductSellableArray */
+  ProductSellableArray?: ProductSellableArray;
+  /** ServiceMessageArray */
+  ServiceMessageArray?: ServiceMessageArray;
 }
 
 /** LocationDecorationArray */
 export interface LocationDecorationArray {
-    /** LocationDecoration[] */
-    LocationDecoration?: Array<LocationDecoration>;
+  /** LocationDecoration[] */
+  LocationDecoration?: Array<LocationDecoration>;
 }
 
 /** LocationDecoration */
 export interface LocationDecoration {
-    /** xsd:token|minLength,maxLength */
-    locationName?: string;
-    /** xsd:int */
-    maxImprintColors?: string;
-    /** xsd:token|minLength,maxLength */
-    decorationName?: string;
-    /** xsd:boolean */
-    locationDecorationComboDefault?: string;
-    /** xsd:boolean */
-    priceIncludes?: string;
+  /** xsd:token|minLength,maxLength */
+  locationName?: string;
+  /** xsd:int */
+  maxImprintColors?: string;
+  /** xsd:token|minLength,maxLength */
+  decorationName?: string;
+  /** xsd:boolean */
+  locationDecorationComboDefault?: string;
+  /** xsd:boolean */
+  priceIncludes?: string;
 }
 
 /**
@@ -246,8 +249,8 @@ export interface LocationDecoration {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface PrimaryColor {
-    /** Color */
-    Color?: Color;
+  /** Color */
+  Color?: Color;
 }
 
 /**
@@ -256,16 +259,16 @@ export interface PrimaryColor {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductCategoryArray {
-    /** ProductCategory */
-    ProductCategory?: ProductCategory;
+  /** ProductCategory */
+  ProductCategory?: ProductCategory;
 }
 
 /** ProductCategory */
 export interface ProductCategory {
-    /** xsd:token|minLength,maxLength */
-    category?: string;
-    /** xsd:token|minLength,maxLength */
-    subCategory?: string;
+  /** xsd:token|minLength,maxLength */
+  category?: string;
+  /** xsd:token|minLength,maxLength */
+  subCategory?: string;
 }
 
 /**
@@ -274,8 +277,8 @@ export interface ProductCategory {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/`
  */
 export interface ProductCloseOutArray {
-    /** ProductCloseOut */
-    ProductCloseOut?: ProductCloseOut;
+  /** ProductCloseOut */
+  ProductCloseOut?: ProductCloseOut;
 }
 
 /**
@@ -284,10 +287,10 @@ export interface ProductCloseOutArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductCloseOut {
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
 }
 
 /**
@@ -296,8 +299,8 @@ export interface ProductCloseOut {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/`
  */
 export interface ProductDateModifiedArray {
-    /** ProductDateModified */
-    ProductDateModified?: ProductDateModified;
+  /** ProductDateModified */
+  ProductDateModified?: ProductDateModified;
 }
 
 /**
@@ -306,10 +309,10 @@ export interface ProductDateModifiedArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductDateModified {
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
 }
 
 /**
@@ -318,14 +321,14 @@ export interface ProductDateModified {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductKeywordArray {
-    /** ProductKeyword */
-    ProductKeyword?: ProductKeyword;
+  /** ProductKeyword */
+  ProductKeyword?: ProductKeyword;
 }
 
 /** ProductKeyword */
 export interface ProductKeyword {
-    /** xsd:token|minLength,maxLength */
-    keyword?: string;
+  /** xsd:token|minLength,maxLength */
+  keyword?: string;
 }
 
 /**
@@ -334,16 +337,16 @@ export interface ProductKeyword {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductMarketingPointArray {
-    /** ProductMarketingPoint */
-    ProductMarketingPoint?: ProductMarketingPoint;
+  /** ProductMarketingPoint */
+  ProductMarketingPoint?: ProductMarketingPoint;
 }
 
 /** ProductMarketingPoint */
 export interface ProductMarketingPoint {
-    /** xsd:token|minLength,maxLength */
-    pointType?: string;
-    /** xsd:token|minLength,maxLength */
-    pointCopy?: string;
+  /** xsd:token|minLength,maxLength */
+  pointType?: string;
+  /** xsd:token|minLength,maxLength */
+  pointCopy?: string;
 }
 
 /**
@@ -352,26 +355,26 @@ export interface ProductMarketingPoint {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductPackage {
-    /** xsd:boolean */
-    default?: string;
-    /** xsd:token|minLength,maxLength */
-    packageType?: string;
-    /** xsd:token|minLength,maxLength */
-    description?: string;
-    /** xsd:decimal */
-    quantity?: string;
-    /** ns2:dimensionUomEnum|maxLength,minLength */
-    dimensionUom?: string;
-    /** xsd:decimal */
-    depth?: string;
-    /** xsd:decimal */
-    height?: string;
-    /** xsd:decimal */
-    width?: string;
-    /** ns2:weightUomEnum|maxLength,minLength */
-    weightUom?: string;
-    /** xsd:decimal */
-    weight?: string;
+  /** xsd:boolean */
+  default?: string;
+  /** xsd:token|minLength,maxLength */
+  packageType?: string;
+  /** xsd:token|minLength,maxLength */
+  description?: string;
+  /** xsd:decimal */
+  quantity?: string;
+  /** ns2:dimensionUomEnum|maxLength,minLength */
+  dimensionUom?: string;
+  /** xsd:decimal */
+  depth?: string;
+  /** xsd:decimal */
+  height?: string;
+  /** xsd:decimal */
+  width?: string;
+  /** ns2:weightUomEnum|maxLength,minLength */
+  weightUom?: string;
+  /** xsd:decimal */
+  weight?: string;
 }
 
 /**
@@ -380,14 +383,14 @@ export interface ProductPackage {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductPackagingArray {
-    /** ProductPackage */
-    ProductPackage?: ProductPackage;
+  /** ProductPackage */
+  ProductPackage?: ProductPackage;
 }
 
 /** ProductPartArray */
 export interface ProductPartArray {
-    /** ProductPart[] */
-    ProductPart?: Array<ProductPart>;
+  /** ProductPart[] */
+  ProductPart?: Array<ProductPart>;
 }
 
 /**
@@ -396,58 +399,58 @@ export interface ProductPartArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductPart {
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
-    /** primaryColor */
-    primaryColor?: PrimaryColor;
-    /** xsd:token|minLength,maxLength */
-    description?: string;
-    /** ns3:ISO3166CountyCode|maxLength,minLength */
-    countryOfOrigin?: string;
-    /** ColorArray */
-    ColorArray?: ColorArray;
-    /** xsd:token|minLength,maxLength */
-    primaryMaterial?: string;
-    /** SpecificationArray */
-    SpecificationArray?: SpecificationArray;
-    /** xsd:token|minLength,maxLength */
-    shape?: string;
-    /** ApparelSize */
-    ApparelSize?: ApparelSize;
-    /** Dimension */
-    Dimension?: Dimension;
-    /** xsd:int */
-    leadTime?: string;
-    /** xsd:token|minLength,maxLength */
-    unspsc?: string;
-    /** xsd:token|minLength,maxLength */
-    gtin?: string;
-    /** xsd:boolean */
-    isRushService?: string;
-    /** ProductPackagingArray */
-    ProductPackagingArray?: ProductPackagingArray;
-    /** ShippingPackageArray */
-    ShippingPackageArray?: ShippingPackageArray;
-    /** xsd:dateTime */
-    endDate?: string;
-    /** xsd:dateTime */
-    effectiveDate?: string;
-    /** xsd:boolean */
-    isCloseout?: string;
-    /** xsd:boolean */
-    isCaution?: string;
-    /** xsd:token|maxLength,minLength */
-    cautionComment?: string;
-    /** xsd:decimal */
-    nmfcCode?: string;
-    /** xsd:token|minLength,maxLength */
-    nmfcDescription?: string;
-    /** xsd:token|minLength,maxLength */
-    nmfcNumber?: string;
-    /** xsd:boolean */
-    isOnDemand?: string;
-    /** xsd:boolean */
-    isHazmat?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
+  /** primaryColor */
+  primaryColor?: PrimaryColor;
+  /** xsd:token|minLength,maxLength */
+  description?: string;
+  /** ns3:ISO3166CountyCode|maxLength,minLength */
+  countryOfOrigin?: string;
+  /** ColorArray */
+  ColorArray?: ColorArray;
+  /** xsd:token|minLength,maxLength */
+  primaryMaterial?: string;
+  /** SpecificationArray */
+  SpecificationArray?: SpecificationArray;
+  /** xsd:token|minLength,maxLength */
+  shape?: string;
+  /** ApparelSize */
+  ApparelSize?: ApparelSize;
+  /** Dimension */
+  Dimension?: Dimension;
+  /** xsd:int */
+  leadTime?: string;
+  /** xsd:token|minLength,maxLength */
+  unspsc?: string;
+  /** xsd:token|minLength,maxLength */
+  gtin?: string;
+  /** xsd:boolean */
+  isRushService?: string;
+  /** ProductPackagingArray */
+  ProductPackagingArray?: ProductPackagingArray;
+  /** ShippingPackageArray */
+  ShippingPackageArray?: ShippingPackageArray;
+  /** xsd:dateTime */
+  endDate?: string;
+  /** xsd:dateTime */
+  effectiveDate?: string;
+  /** xsd:boolean */
+  isCloseout?: string;
+  /** xsd:boolean */
+  isCaution?: string;
+  /** xsd:token|maxLength,minLength */
+  cautionComment?: string;
+  /** xsd:decimal */
+  nmfcCode?: string;
+  /** xsd:token|minLength,maxLength */
+  nmfcDescription?: string;
+  /** xsd:token|minLength,maxLength */
+  nmfcNumber?: string;
+  /** xsd:boolean */
+  isOnDemand?: string;
+  /** xsd:boolean */
+  isHazmat?: string;
 }
 
 /**
@@ -456,8 +459,8 @@ export interface ProductPart {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductPriceArray {
-    /** ProductPrice */
-    ProductPrice?: ProductPrice;
+  /** ProductPrice */
+  ProductPrice?: ProductPrice;
 }
 
 /**
@@ -466,8 +469,8 @@ export interface ProductPriceArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductPriceGroupArray {
-    /** ProductPriceGroup */
-    ProductPriceGroup?: ProductPriceGroup;
+  /** ProductPriceGroup */
+  ProductPriceGroup?: ProductPriceGroup;
 }
 
 /**
@@ -476,32 +479,32 @@ export interface ProductPriceGroupArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductPriceGroup {
-    /** ProductPriceArray */
-    ProductPriceArray?: ProductPriceArray;
-    /** xsd:token|minLength,maxLength */
-    groupName?: string;
-    /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
-    currency?: string;
-    /** xsd:token|minLength,maxLength */
-    description?: string;
+  /** ProductPriceArray */
+  ProductPriceArray?: ProductPriceArray;
+  /** xsd:token|minLength,maxLength */
+  groupName?: string;
+  /** CurrencyCodeType|xs:string|AFA,ALL,DZD,AON,ARS,AMD,AWG,AUD,ATS,AZM,BSD,BHD,BDT,BBD,BYR,BEF,BZD,BMD,BTN,BOB,BAM,BWP,BRL,BND,BGL,BIF,KHR,CAD,CVE,KYD,XOF,XAF,XPF,CLP,CNY,COP,KMF,CDF,CRC,HRK,CUP,CYP,CZK,DKK,DEM,DJF,DOP,NLG,XCD,ECS,EGP,SVC,ERN,EEK,ETB,EUR,FKP,FJD,FIM,FRF,GMD,GEL,GHC,GIP,GRD,GTQ,GYD,HTG,HNL,HKD,HUF,ISK,INR,IDR,IRR,IQD,IEP,ILS,ITL,JMD,JPY,JOD,KZT,KES,KWD,KGS,LAK,LVL,LBP,LSL,LRD,LYD,LTL,LUF,MOP,MKD,MGF,MWK,MYR,MVR,MTL,MRO,MUR,MXN,MDL,MNT,MAD,MZM,MMK,NAD,NPR,ANG,ZRN,NZD,NIC,NGN,KPW,NOK,PKR,PAB,PGK,PYG,PEN,PHP,PLN,PTE,QAR,OMR,ROL,RUR,RWF,STD,SAR,SCR,SLL,SGD,SKK,SIT,SBD,SOS,ZAR,KRW,ESP,LKR,SHP,GBP,SDP,SRG,SZL,SEK,CHF,SYP,TWD,TJR,TZS,THB,TPE,TOP,TTD,TND,TRL,TMM,AED,UGX,UAH,UYU,USD,UZS,VUV,VEB,VND,WST,YER,YUM,ZMK,ZWD */
+  currency?: string;
+  /** xsd:token|minLength,maxLength */
+  description?: string;
 }
 
 /** ProductPrice */
 export interface ProductPrice {
-    /** xsd:int */
-    quantityMin?: string;
-    /** xsd:int */
-    quantityMax?: string;
-    /** xsd:decimal */
-    price?: string;
-    /** xsd:token|minLength,maxLength */
-    discountCode?: string;
+  /** xsd:int */
+  quantityMin?: string;
+  /** xsd:int */
+  quantityMax?: string;
+  /** xsd:decimal */
+  price?: string;
+  /** xsd:token|minLength,maxLength */
+  discountCode?: string;
 }
 
 /** ProductSellableArray */
 export interface ProductSellableArray {
-    /** ProductSellable[] */
-    ProductSellable?: Array<ProductSellable>;
+  /** ProductSellable[] */
+  ProductSellable?: Array<ProductSellable>;
 }
 
 /**
@@ -510,12 +513,12 @@ export interface ProductSellableArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ProductSellable {
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
-    /** xsd:token|minLength,maxLength */
-    culturePoint?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
+  /** xsd:token|minLength,maxLength */
+  culturePoint?: string;
 }
 
 /**
@@ -524,62 +527,62 @@ export interface ProductSellable {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface Product {
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    productName?: string;
-    /** xsd:token|minLength,maxLength */
-    description?: string;
-    /** xsd:dateTime */
-    priceExpiresDate?: string;
-    /** ProductMarketingPointArray */
-    ProductMarketingPointArray?: ProductMarketingPointArray;
-    /** ProductKeywordArray */
-    ProductKeywordArray?: ProductKeywordArray;
-    /** xsd:token|maxLength,minLength */
-    productBrand?: string;
-    /** xsd:boolean */
-    export?: string;
-    /** ProductCategoryArray */
-    ProductCategoryArray?: ProductCategoryArray;
-    /** RelatedProductArray */
-    RelatedProductArray?: RelatedProductArray;
-    /** xsd:token|minLength,maxLength */
-    primaryImageUrl?: string;
-    /** ProductPriceGroupArray */
-    ProductPriceGroupArray?: ProductPriceGroupArray;
-    /** xsd:boolean */
-    complianceInfoAvailable?: string;
-    /** xsd:int */
-    unspscCommodityCode?: string;
-    /** LocationDecorationArray */
-    LocationDecorationArray?: LocationDecorationArray;
-    /** ProductPartArray */
-    ProductPartArray?: ProductPartArray;
-    /** xsd:dateTime */
-    lastChangeDate?: string;
-    /** xsd:dateTime */
-    creationDate?: string;
-    /** xsd:dateTime */
-    endDate?: string;
-    /** xsd:dateTime */
-    effectiveDate?: string;
-    /** xsd:boolean */
-    isCaution?: string;
-    /** xsd:token|maxLength,minLength */
-    cautionComment?: string;
-    /** xsd:boolean */
-    isCloseout?: string;
-    /** xsd:token|maxLength,minLength */
-    lineName?: string;
-    /** xsd:token|minLength,maxLength */
-    defaultSetupCharge?: string;
-    /** xsd:token|minLength,maxLength */
-    defaultRunCharge?: string;
-    /** xsd:token|minLength,maxLength */
-    imprintSize?: string;
-    /** FobPointArray */
-    FobPointArray?: FobPointArray;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  productName?: string;
+  /** xsd:token|minLength,maxLength */
+  description?: string;
+  /** xsd:dateTime */
+  priceExpiresDate?: string;
+  /** ProductMarketingPointArray */
+  ProductMarketingPointArray?: ProductMarketingPointArray;
+  /** ProductKeywordArray */
+  ProductKeywordArray?: ProductKeywordArray;
+  /** xsd:token|maxLength,minLength */
+  productBrand?: string;
+  /** xsd:boolean */
+  export?: string;
+  /** ProductCategoryArray */
+  ProductCategoryArray?: ProductCategoryArray;
+  /** RelatedProductArray */
+  RelatedProductArray?: RelatedProductArray;
+  /** xsd:token|minLength,maxLength */
+  primaryImageUrl?: string;
+  /** ProductPriceGroupArray */
+  ProductPriceGroupArray?: ProductPriceGroupArray;
+  /** xsd:boolean */
+  complianceInfoAvailable?: string;
+  /** xsd:int */
+  unspscCommodityCode?: string;
+  /** LocationDecorationArray */
+  LocationDecorationArray?: LocationDecorationArray;
+  /** ProductPartArray */
+  ProductPartArray?: ProductPartArray;
+  /** xsd:dateTime */
+  lastChangeDate?: string;
+  /** xsd:dateTime */
+  creationDate?: string;
+  /** xsd:dateTime */
+  endDate?: string;
+  /** xsd:dateTime */
+  effectiveDate?: string;
+  /** xsd:boolean */
+  isCaution?: string;
+  /** xsd:token|maxLength,minLength */
+  cautionComment?: string;
+  /** xsd:boolean */
+  isCloseout?: string;
+  /** xsd:token|maxLength,minLength */
+  lineName?: string;
+  /** xsd:token|minLength,maxLength */
+  defaultSetupCharge?: string;
+  /** xsd:token|minLength,maxLength */
+  defaultRunCharge?: string;
+  /** xsd:token|minLength,maxLength */
+  imprintSize?: string;
+  /** FobPointArray */
+  FobPointArray?: FobPointArray;
 }
 
 /**
@@ -588,8 +591,8 @@ export interface Product {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface RelatedProductArray {
-    /** RelatedProduct */
-    RelatedProduct?: RelatedProduct;
+  /** RelatedProduct */
+  RelatedProduct?: RelatedProduct;
 }
 
 /**
@@ -598,12 +601,12 @@ export interface RelatedProductArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface RelatedProduct {
-    /** ns2:relationTypeEnum|minLength,maxLength */
-    relationType?: string;
-    /** xsd:token|minLength,maxLength */
-    productId?: string;
-    /** xsd:token|minLength,maxLength */
-    partId?: string;
+  /** ns2:relationTypeEnum|minLength,maxLength */
+  relationType?: string;
+  /** xsd:token|minLength,maxLength */
+  productId?: string;
+  /** xsd:token|minLength,maxLength */
+  partId?: string;
 }
 
 /**
@@ -612,18 +615,18 @@ export interface RelatedProduct {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ServiceMessageArray {
-    /** ServiceMessage */
-    ServiceMessage?: ServiceMessage;
+  /** ServiceMessage */
+  ServiceMessage?: ServiceMessage;
 }
 
 /** ServiceMessage */
 export interface ServiceMessage {
-    /** xsd:int */
-    code?: string;
-    /** xsd:token|maxLength,minLength */
-    description?: string;
-    /** ns2:SeverityType|maxLength,minLength */
-    severity?: string;
+  /** xsd:int */
+  code?: string;
+  /** xsd:token|maxLength,minLength */
+  description?: string;
+  /** ns2:SeverityType|maxLength,minLength */
+  severity?: string;
 }
 
 /**
@@ -632,8 +635,8 @@ export interface ServiceMessage {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ShippingPackageArray {
-    /** ShippingPackage */
-    ShippingPackage?: ShippingPackage;
+  /** ShippingPackage */
+  ShippingPackage?: ShippingPackage;
 }
 
 /**
@@ -642,24 +645,24 @@ export interface ShippingPackageArray {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface ShippingPackage {
-    /** xsd:token|minLength,maxLength */
-    packageType?: string;
-    /** xsd:token|minLength,maxLength */
-    description?: string;
-    /** xsd:decimal */
-    quantity?: string;
-    /** ns2:dimensionUomEnum|maxLength,minLength */
-    dimensionUom?: string;
-    /** xsd:decimal */
-    depth?: string;
-    /** xsd:decimal */
-    height?: string;
-    /** xsd:decimal */
-    width?: string;
-    /** ns2:weightUomEnum|maxLength,minLength */
-    weightUom?: string;
-    /** xsd:decimal */
-    weight?: string;
+  /** xsd:token|minLength,maxLength */
+  packageType?: string;
+  /** xsd:token|minLength,maxLength */
+  description?: string;
+  /** xsd:decimal */
+  quantity?: string;
+  /** ns2:dimensionUomEnum|maxLength,minLength */
+  dimensionUom?: string;
+  /** xsd:decimal */
+  depth?: string;
+  /** xsd:decimal */
+  height?: string;
+  /** xsd:decimal */
+  width?: string;
+  /** ns2:weightUomEnum|maxLength,minLength */
+  weightUom?: string;
+  /** xsd:decimal */
+  weight?: string;
 }
 
 /**
@@ -668,45 +671,126 @@ export interface ShippingPackage {
  * @targetNamespace `http://www.promostandards.org/WSDL/ProductDataService/2.0.0/SharedObjects/`
  */
 export interface SpecificationArray {
-    /** Specification */
-    Specification?: Specification;
+  /** Specification */
+  Specification?: Specification;
 }
 
 /** Specification */
 export interface Specification {
-    /** ns2:specificationTypeEnum|minLength,maxLength */
-    specificationType?: string;
-    /** xsd:token|minLength,maxLength */
-    SpecificationUom?: string;
-    /** xsd:token|minLength,maxLength */
-    measurementValue?: string;
+  /** ns2:specificationTypeEnum|minLength,maxLength */
+  specificationType?: string;
+  /** xsd:token|minLength,maxLength */
+  SpecificationUom?: string;
+  /** xsd:token|minLength,maxLength */
+  measurementValue?: string;
 }
 
-export type PDRequest = GetProductRequest | GetProductDateModifiedRequest | GGetProductCloseOutRequest | GetProductSellableRequest;
+export type PDRequest =
+  | GetProductRequest
+  | GetProductDateModifiedRequest
+  | GetProductCloseOutRequest
+  | GetProductSellableRequest;
 
-export type PDResponse = GetProductResponse | GetProductDateModifiedResponse | GetProductCloseOutResponse | GetProductSellableResponse;
-
+export type PDResponse =
+  | GetProductResponse
+  | GetProductDateModifiedResponse
+  | GetProductCloseOutResponse
+  | GetProductSellableResponse;
 
 export interface ProductDataServiceBinding {
-    getProduct(getProductRequest: GetProductRequest, callback: (err: any, result: GetProductResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getProductDateModified(getProductDateModifiedRequest: GetProductDateModifiedRequest, callback: (err: any, result: GetProductDateModifiedResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getProductCloseOut(getProductCloseOutRequest: GetProductCloseOutRequest, callback: (err: any, result: GetProductCloseOutResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
-    getProductSellable(getProductSellableRequest: GetProductSellableRequest, callback: (err: any, result: GetProductSellableResponse, rawResponse: any, soapHeader: any, rawRequest: any) => void): void;
+  getProduct(
+    getProductRequest: GetProductRequest,
+    callback: (
+      err: any,
+      result: GetProductResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getProductDateModified(
+    getProductDateModifiedRequest: GetProductDateModifiedRequest,
+    callback: (
+      err: any,
+      result: GetProductDateModifiedResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getProductCloseOut(
+    getProductCloseOutRequest: GetProductCloseOutRequest,
+    callback: (
+      err: any,
+      result: GetProductCloseOutResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
+  getProductSellable(
+    getProductSellableRequest: GetProductSellableRequest,
+    callback: (
+      err: any,
+      result: GetProductSellableResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ) => void,
+  ): void;
 }
 
 export interface ProductDataService {
-    readonly ProductDataServiceBinding: ProductDataServiceBinding;
+  readonly ProductDataServiceBinding: ProductDataServiceBinding;
 }
 
 export interface ProductDataServiceClient extends SoapClient {
-    ProductDataService: ProductDataService;
-    getProductAsync(getProductRequest: GetProductRequest): Promise<[result: GetProductResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getProductDateModifiedAsync(getProductDateModifiedRequest: GetProductDateModifiedRequest): Promise<[result: GetProductDateModifiedResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getProductCloseOutAsync(getProductCloseOutRequest: GetProductCloseOutRequest): Promise<[result: GetProductCloseOutResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
-    getProductSellableAsync(getProductSellableRequest: GetProductSellableRequest): Promise<[result: GetProductSellableResponse, rawResponse: any, soapHeader: any, rawRequest: any]>;
+  ProductDataService: ProductDataService;
+  getProductAsync(
+    getProductRequest: GetProductRequest,
+  ): Promise<
+    [
+      result: GetProductResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getProductDateModifiedAsync(
+    getProductDateModifiedRequest: GetProductDateModifiedRequest,
+  ): Promise<
+    [
+      result: GetProductDateModifiedResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getProductCloseOutAsync(
+    getProductCloseOutRequest: GetProductCloseOutRequest,
+  ): Promise<
+    [
+      result: GetProductCloseOutResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
+  getProductSellableAsync(
+    getProductSellableRequest: GetProductSellableRequest,
+  ): Promise<
+    [
+      result: GetProductSellableResponse,
+      rawResponse: any,
+      soapHeader: any,
+      rawRequest: any,
+    ]
+  >;
 }
 
 /** Create ProductDataServiceClient */
-export function createClientAsync(...args: Parameters<typeof soapCreateClientAsync>): Promise<ProductDataServiceClient> {
-    return soapCreateClientAsync(args[0], args[1], args[2]) as any;
+export function createClientAsync(
+  ...args: Parameters<typeof soapCreateClientAsync>
+): Promise<ProductDataServiceClient> {
+  return soapCreateClientAsync(args[0], args[1], args[2]) as any;
 }

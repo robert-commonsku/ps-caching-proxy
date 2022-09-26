@@ -3,9 +3,13 @@ import { RequestLogEntry } from "../../types.ts";
 import { log } from "../../db.ts";
 
 export const handler = [
-  async function logMiddleware(req: Request, ctx: MiddlewareHandlerContext<RequestLogEntry>) {
-    performance.mark("reqStart");    
+  async function logMiddleware(
+    _req: Request,
+    ctx: MiddlewareHandlerContext<RequestLogEntry>,
+  ) {
+    performance.mark("reqStart");
     const logEntry: RequestLogEntry = {
+      type: "request",
       date: Date.now(),
       ip: ctx.remoteAddr.hostname,
       duration: 0,
@@ -14,7 +18,7 @@ export const handler = [
       accountId: "Unknown",
       cacheHit: false,
       isREST: false,
-      errors: []
+      errors: [],
     } as RequestLogEntry;
 
     ctx.state = logEntry;
@@ -24,5 +28,5 @@ export const handler = [
     logEntry.duration = duration;
     await log(logEntry);
     return resp;
-  }
+  },
 ];

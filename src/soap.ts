@@ -1,19 +1,24 @@
 import { WSDL } from "npm:soap/lib/wsdl/index.js";
+//import { WSDL } from "https://esm.sh/soap";
 import {
-  PricingAndConfigurationClient,
   createClientAsync as createPricingAndConfigurationClient,
-  ErrorMessage,
+  PricingAndConfigurationClient,
 } from "./soap/ppc/1.0.0/index.ts";
 import {
+  createClientAsync as createProductDataClient,
   ProductDataServiceClient,
-  createClientAsync as createProductDataClient
 } from "./soap/pd/2.0.0/index.ts";
 import { getSetting } from "./settings.ts";
-export {
-  type PPCRequest,
-  type PPCResponse
+import type { 
+  PPCRequest,
+  PPCResponse
 } from "./soap/ppc/1.0.0/index.ts";
-export { type PDRequest, type PDResponse } from "./soap/pd/2.0.0/index.ts";
+export type {
+  PPCRequest,
+  PPCResponse,
+  PricingAndConfigurationClient
+}
+export type { PDRequest, PDResponse } from "./soap/pd/2.0.0/index.ts";
 
 const PPC_WSDL = "./soap/ppc/1.0.0/wsdl/PricingAndConfiguration.wsdl";
 const PD_WSDL = "./soap/pd/2.0.0/wsdl/ProductDataService.wsdl";
@@ -21,46 +26,54 @@ const PD_WSDL = "./soap/pd/2.0.0/wsdl/ProductDataService.wsdl";
 let ppcClient: PricingAndConfigurationClient;
 let pdClient: ProductDataServiceClient;
 
-export async function getPPCClient(): PricingAndConfigurationClient {
+export async function getPPCClient(): Promise<PricingAndConfigurationClient> {
   if (!ppcClient) {
-    const endpoint = await getSetting("ppc-endpoint");
-    const options = { endpoint };
-    ppcClient = await createProductDataClient(
+    const options = { endpoint: "" };
+    let endpoint = await getSetting("ppc-endpoint") ?? "";
+    if (typeof endpoint !== "string") {
+      endpoint = endpoint[0];
+    }
+    options.endpoint = endpoint;
+    ppcClient = await createPricingAndConfigurationClient(
       PPC_WSDL,
-      options
+      options,
     );
   }
   return ppcClient;
 }
 
-export async function getPDClient(): ProductDataServiceClient {
+export async function getPDClient(): Promise<ProductDataServiceClient> {
   if (!pdClient) {
-    const endpoint = await getSetting("pd-endpoint");
-    const options = { endpoint };
+    const options = { endpoint: "" };
+    let endpoint = await getSetting("pd-endpoint") ?? "";
+    if (typeof endpoint !== "string") {
+      endpoint = endpoint[0];
+    }
+    options.endpoint = endpoint;
     pdClient = await createProductDataClient(
       PD_WSDL,
-      options
+      options,
     );
   }
   return pdClient;
 }
 
-function envelope(body, xmlnsInEnvelope = "") {
+function envelope(body: string, xmlnsInEnvelope = "") {
   const xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<soap:Envelope ' +
+    "<soap:Envelope " +
     'xmlns:soap="http://www.w3.org/2003/05/soap-envelope" ' +
-     xmlnsInEnvelope +
-    '>' +
-    (body ? '<soap:Body>' + body + '</soap:Body>' : '<soap:Body />')
-    '</soap:Envelope>';
+    xmlnsInEnvelope +
+    ">" +
+    (body ? "<soap:Body>" + body + "</soap:Body>" : "<soap:Body />");
+  "</soap:Envelope>";
   return xml;
 }
 
-export async function getSoapFaultResponse(fault): Response {
+export async function getSoapFaultResponse(fault: any): Promise<Response> {
   const client = await getPPCClient();
   const xml = client.wsdl.objectToDocumentXML("Fault", fault, "soap");
   return new Response(envelope(xml), {
-    headers: { "Content-Type": "text/xml; charset=utf-8" }
+    headers: { "Content-Type": "text/xml; charset=utf-8" },
   });
 }
 
@@ -70,21 +83,29 @@ function getPPCBinding(wsdl: WSDL) {
   return wsdl.definitions.services[serviceName].ports[portName].binding;
 }
 
-export async function getMethodFromRequest(requestName: string): string {
+export async function getMethodFromRequest(requestName: string): Promise<string> {
   const client = await getPPCClient();
   const binding = getPPCBinding(client.wsdl);
-  const methodName = binding.topElements[requestName].methodName;
+  const methodName = binding?.topElements?.[requestName]?.methodName ?? "";
   return methodName;
 }
 
-export async function getSoapResponse(requestName: string, resp: PPCResponse): Response {
+export async function getSoapResponse(
+  requestName: string,
+  resp: PPCResponse,
+): Promise<Response> {
   const client = await getPPCClient();
   const binding = getPPCBinding(client.wsdl);
-  const methodName = binding.topElements[requestName].methodName;
-  const outputName = binding.topElements[requestName].outputName;
-  const element = binding.methods[methodName].output;
-  const xml = client.wsdl.objectToDocumentXML(outputName, resp, element.targetNSAlias, element.targetNamespace);
+  const methodName = binding?.topElements?.[requestName]?.methodName ?? requestName;
+  const outputName = binding?.topElements?.[requestName]?.outputName ?? requestName;
+  const element = binding?.methods?.[methodName]?.output;
+  const xml = element ? client.wsdl.objectToDocumentXML(
+    outputName,
+    resp,
+    element?.targetNSAlias ?? "",
+    element?.targetNamespace,
+  ) : "";
   return new Response(envelope(xml), {
-    headers: { "Content-Type": "text/xml" }
+    headers: { "Content-Type": "text/xml" },
   });
 }

@@ -1,21 +1,21 @@
 import { Handlers } from "$fresh/server.ts";
 import {
+  getMethodFromRequest,
   getPPCClient,
   getSoapFaultResponse,
   getSoapResponse,
-  getMethodFromRequest
 } from "../../../soap.ts";
-import { getSetting, setSetting } from "../../../settings.ts";
+import { getSetting } from "../../../settings.ts";
 import {
-  isLocaleOk,
-  getErrorTransform,
-  ERROR_BAD_XML,
-  ERROR_ID_NOT_FOUND,
   ERROR_AUTHENTICATION_FAILED,
   ERROR_AUTHENTICATION_REQUIRED,
-  ERROR_WSVERSION_NOT_FOUND,
+  ERROR_BAD_XML,
+  ERROR_ID_NOT_FOUND,
+  ERROR_LOCALIZATION_LANGUAGE_NOT_FOUND,
   ERROR_LOCALIZATION_COUNTRY_NOT_FOUND,
-  ERROR_LOCALIZAITON_LANGUAGE_NOT_FOUND,
+  ERROR_WSVERSION_NOT_FOUND,
+  getErrorTransform,
+  isLocaleOk,
 } from "../../../verify.ts";
 import { login } from "../../../db.ts";
 import { forward, retrieve } from "../../../backend.ts";
@@ -41,9 +41,15 @@ export const handler: Handlers = {
     ctx.state.params = getParams(jsonReq);
 
     let response;
-    if (!await isLocaleOk(jsonReq.localizationLanguage, jsonReq.localizationCountry)) {
+    if (
+      !await isLocaleOk(
+        jsonReq.localizationLanguage,
+        jsonReq.localizationCountry,
+      )
+    ) {
       const defaultLocale = await getSetting("default-locale");
-      [jsonReq.localizationLanguage, jsonReq.localizationCountry] = defaultLocale.split("-");
+      [jsonReq.localizationLanguage, jsonReq.localizationCountry] =
+        defaultLocale.split("-");
       transforms.push(getErrorTransform(ERROR_LOCALIZATION_COUNTRY_NOT_FOUND));
       ctx.state.errors.push(ERROR_LOCALIZATION_COUNTRY_NOT_FOUND);
       transforms.push(getErrorTransform(ERROR_LOCALIZATION_LANGUAGE_NOT_FOUND));
@@ -83,9 +89,9 @@ export const handler: Handlers = {
       }
     }
 
-    transforms.forEach(t => t(response));
+    transforms.forEach((t) => t(response));
 
     const soapResponse = await getSoapResponse(requestName, response);
     return soapResponse;
-  }
+  },
 };

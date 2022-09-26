@@ -1,50 +1,90 @@
-export {
+import type {
+  GetAvailableChargesRequest,
   GetAvailableLocationsRequest,
+  GetConfigurationAndPricingRequest,
   GetDecorationColorsRequest,
   GetFobPointsRequest,
-  GetAvailableChargesRequest,
-  GetConfigurationAndPricingRequest,
-  type PPCRequest,
-  type PPCResponse
+  PPCRequest,
+  PPCResponse,
 } from "./soap/ppc/1.0.0/index.ts";
 
-type OmittedFields = "wsVersion" | "id" | "password" | "productId";
-export type GetAvailableLocationsParams = Omit<GetAvailableLocationsRequest, "wsVersion" | "id" | "password" | "productId">;
-export type GetDecorationColorsParams = Omit<GetDecorationColorsRequest, "wsVersion" | "id" | "password" | "productId">;
-export type GetFobPointsParams = Omit<GetFobPointsRequest, "wsVersion" | "id" | "password" | "productId">;
-export type GetAvailableChargesParams = Omit<GetAvailableChargesRequest, "wsVersion" | "id" | "password" | "productId">;
-export type GetConfigurationAndPricingParams = Omit<GetConfigurationAndPricingRequest, "wsVersion" | "id" | "password" | "productId">;
+export type {
+  GetAvailableChargesRequest,
+  GetAvailableLocationsRequest,
+  GetConfigurationAndPricingRequest,
+  GetDecorationColorsRequest,
+  GetFobPointsRequest,
+  PPCRequest,
+  PPCResponse,
+};
 
-export type PPCParams = GetAvailableLocationsParams | GetDecorationColorsParams | GetFobPointsParams | GetAvailableChargesParams | GetConfigurationAndPricingParams;
+type OmittedFields = "wsVersion" | "id" | "password" | "productId";
+export type GetAvailableLocationsParams = Omit<
+  GetAvailableLocationsRequest,
+  "wsVersion" | "id" | "password" | "productId"
+>;
+export type GetDecorationColorsParams = Omit<
+  GetDecorationColorsRequest,
+  "wsVersion" | "id" | "password" | "productId"
+>;
+export type GetFobPointsParams = Omit<
+  GetFobPointsRequest,
+  "wsVersion" | "id" | "password" | "productId"
+>;
+export type GetAvailableChargesParams = Omit<
+  GetAvailableChargesRequest,
+  "wsVersion" | "id" | "password" | "productId"
+>;
+export type GetConfigurationAndPricingParams = Omit<
+  GetConfigurationAndPricingRequest,
+  "wsVersion" | "id" | "password" | "productId"
+>;
+
+export type PPCParams =
+  | GetAvailableLocationsParams
+  | GetDecorationColorsParams
+  | GetFobPointsParams
+  | GetAvailableChargesParams
+  | GetConfigurationAndPricingParams;
+
+type LogEntryType = "request" | "backend";
+
+export const PPC_METHODS = [
+  "getAvailableLocations",
+  "getAvailableCharges",
+  "getFobPoints",
+  "getDecorationColors",
+  "getConfigurationAndPricing",
+];
 
 export interface LogEntry {
   id?: string;
+  type: LogEntryType;
   date: number;
   method: string;
   accountId: string;
   productId: string;
   params?: PPCParams;
   duration: number;
-  errors: number[];
+  errors: string[];
 }
 
 export interface RequestLogEntry extends LogEntry {
   ip: string;
+  type: "request";
   cacheHit: boolean;
   isREST: boolean;
   backendId?: string;
 }
 
-export interface CachePrime {
-  productId: string;
-  locale: string;
+export interface BackendLogEntry extends LogEntry {
+  type: "backend";
 }
 
-export interface RequestJob {
+export type JobStatus = "queued" | "processing" | "done" | "failed";
+export type JobType = "stats" | "fan-requests" | "request" | "get-products";
+
+export interface DataRequest {
   methodName: string;
   params: PPCRequest;
-}
-
-export interface FanRequestJob {
-  methodName: string;
 }
