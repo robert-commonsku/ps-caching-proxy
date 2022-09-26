@@ -1,7 +1,7 @@
 import { BackendLogEntry, DataRequest } from "../types.ts";
 import { getPPCClient } from "../soap.ts";
 import type { PricingAndConfigurationClient, PPCRequest } from "../soap.ts";
-import db, { getPassword, log } from "../db.ts";
+import db, { getPassword, log, logProblem } from "../db.ts";
 import { accounts, getParams } from "../utils.ts";
 import { hasError, getErrorCodes } from "../verify.ts";
 import { store, storeCustomerPricing } from "../backend.ts";
@@ -31,6 +31,11 @@ export default async function request({ methodName, params }: DataRequest) {
       await db.sadd("product-locations:" + params.productId, ...locationIds);
     } else if ("getFobPoints" === methodName) {
       resp.FobPointArray.FobPoint.forEach(async (f) => {
+        if (!f.CurrencySupportedArray) {
+          logProblem(methodName, {...params, id: accountId}, "fob-no-currency");
+          return;
+        }
+
         const currencies = f.CurrencySupportedArray.CurrencySupported.map((c) =>
           c.currency
         );

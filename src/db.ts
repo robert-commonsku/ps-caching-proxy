@@ -81,6 +81,26 @@ export async function log(logEntry: LogEntry) {
   return await db.set(key, JSON.stringify(logEntry));
 }
 
+export async function logProblem(methodName: string, req: PPCRequest, type: string) {
+  const id = crypto.randomUUID();
+  const key = "problem:" + id;
+  const problem = {
+    id,
+    type,
+    date: Date.now(),
+    methodName,
+    accountId: req.id,
+    productId: req.productId,
+    params: Object.keys(req).filter(
+      k => !["id", "password", "productId", "wsVersion"].includes(k)
+    ).reduce(
+      (o, k) => ({ ...o, [k]: req[k] }),
+      {}
+    )
+  };
+  return await db.set(key, JSON.stringify(problem));
+}
+
 export interface Job<Data> {
   id: string;
   type: JobType;
@@ -92,7 +112,7 @@ export interface Job<Data> {
 
 interface JobProcess<Data> {
   (data: Data): Promise<any | never>;
-};
+}
 
 interface JobProcessMap<Data> {
   [jobType: string]: JobProcess<Data>;
@@ -165,7 +185,7 @@ export class Queue<Data> {
       return;
     }
     const data = await db.hgetall(id);
-    const obj = data.filter((v, i) => (i % 2) === 0).reduce(
+    const obj = data.filter((_v, i) => (i % 2) === 0).reduce(
       (o, k, i) => ({ ...o, [k]: data[2 * i + 1] }),
       {}
     );
