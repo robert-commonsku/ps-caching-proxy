@@ -10,7 +10,6 @@ export default async function fanRequests({ methodName, params }: DataRequest) {
   for await (let productId of makeSetIterator("products-sellable")) {
     productIds.push(productId);
   }
-  productIds = productIds.slice(0, 4);
   const queue = new Queue<DataRequest>(
     config.product_queue,
     {
